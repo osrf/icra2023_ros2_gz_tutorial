@@ -135,4 +135,5 @@ References
 
 ## Organizers
 Mabel Zhang, Open Robotics
+
 Chris Lalancette, Open Robotics
