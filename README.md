@@ -1,6 +1,8 @@
-# PROPOSAL for tutorial: "All about ROS 2 and the new Gazebo"
+# Tutorial: "All about ROS 2 and the new Gazebo"
 
-This is a proposed tutorial for ICRA 2023, pending acceptance.
+This is a proposed tutorial that has been accepted to ICRA 2023.
+
+This repository will be updated in the time leading up to the conference.
 
 
 ## Overview
