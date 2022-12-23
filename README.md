@@ -19,6 +19,12 @@ After [8 distribution releases of ROS 2](https://docs.ros.org/en/rolling/Release
 
 While ROS 2 has seen wide industry adoption, including mission-critical space applications and autonomous vehicles, academic users have been uncertain. In this tutorial, we hope to address the uncertainty by exposing attendees to new features in ROS 2 and the new Gazebo (formerly Ignition) through hands-on exercises using examples developed for real-world applications.
 
+Audience:
+- [ROS](https://www.ros.org/) 1 users wondering whether to to migrate to ROS 2 users new to ROS
+- ROS 2 users
+- Gazebo-classic users wondering whether to migrate to new Gazebo
+- Users wondering whether the new Gazebo is right for them
+- Users of other simulators looking to learn about the new Gazebo and existing infrastructure we worked on with Nvidia, DeepMind, and Toyota Research Institute in the past few years to handle format conversions between SDF and formats used by OmniVerse, MuJoCo, and Drake.
 
 ## Tentative schedule
 
@@ -28,16 +34,11 @@ In the first half of the day, we will first discuss reasons one might choose ROS
 
 In the second half of the day, we will have a similar discussion about migrating from [Gazebo-classic](https://classic.gazebosim.org/) to the [new Gazebo](https://gazebosim.org/) (formerly Ignition), and hands-on practice.
 
-Audience:
-- [ROS](https://www.ros.org/) 1 users wondering whether to to migrate to ROS 2 users new to ROS
-- ROS 2 users
-- Gazebo-classic users wondering whether to migrate to new Gazebo
-- Users wondering whether the new Gazebo is right for them
-- Users of other simulators looking to learn about the new Gazebo and existing infrastructure we worked on with Nvidia, DeepMind, and Toyota Research Institute in the past few years to handle format conversions between SDF and formats used by OmniVerse, MuJoCo, and Drake.
-
 References
 
 [1] Steven Macenski, Tully Foote, Brian Gerkey, Chris Lalancette, and William Woodall. [Robot Operating System 2: Design, architecture, and uses in the wild](https://www.science.org/stoken/author-tokens/ST-483/full). Science Robotics, May 2022. Volume 7, issue 66. DOI 10.1126/scirobotics.abm6074
+
+Schedule (tentative):
 
 1. Welcome and Intro (5 mins)
 
