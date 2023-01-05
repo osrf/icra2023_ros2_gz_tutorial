@@ -44,7 +44,7 @@ Schedule (tentative):
 
 2. Is ROS 2 right for me? (50 mins)
     1. Discuss top 5 reasons collected at ICRA 2022 Philadelphia through informal conversations, why people aren't using ROS 2. (Mabel, 5 mins)
-    2. Show the table in ROS 2 paper on Science Robotics highlighting ROS 1 vs. 2, 10 bite-size paragraphs of what's new in ROS 2, and 5 example use cases. (Mabel, 5 mins)
+    2. Show the table in ROS 2 paper on Science Robotics highlighting ROS 1 vs. 2, 10 bite-size paragraphs of what's new in ROS 2, and 5 example use cases. (5 mins)
     3. Present and elaborate on points of whether people should switch to ROS 2. (Chris, 30 mins)
         1. ROS 2 in different domains
             1. [Open Robotics Middleware Framework (Open-RMF)](https://www.open-rmf.org/) for indoor robot fleets ([GitHub](https://github.com/open-rmf))
@@ -80,7 +80,7 @@ Schedule (tentative):
 6. Lunch
 
 7. All about the new Gazebo (50 mins)
-    1. What is the new Gazebo (Mabel / Louise Poubel) (5 mins)
+    1. What is the new Gazebo (5 mins)
     2. Videos of different application domains: land, space, marine, manipulation (15 mins)
         1. DARPA SubTerranean Challenge ([GitHub](https://github.com/osrf/subt), [3D model collection on Fuel](https://app.gazebosim.org/OpenRobotics/fuel/collections/SubT%20Tech%20Repo)): physics-based rendering (PBR), levels (LOD)
         2. Demo worlds from Gazebo [Edifice](https://app.gazebosim.org/OpenRobotics/fuel/worlds/Edifice%20demo), [Fortress](https://app.gazebosim.org/OpenRobotics/fuel/worlds/Fortress%20demo), Garden releases. 3D models on Gazebo Fuel, a free online database
