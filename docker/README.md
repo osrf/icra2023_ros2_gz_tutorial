@@ -1,5 +1,10 @@
 Docker environments to run the tutorials in this repository.
 
+## Prerequisites
+
+Install Docker and NVIDIA Docker 2 (if your machine has an NVIDIA GPU) following
+instructions [here](https://github.com/osrf/subt/wiki/Docker%20Install).
+
 ## Example usage
 
 To build an image:
@@ -19,7 +24,8 @@ To join a running container from another terminal:
 
 ## Test the image
 
-After building and running the image, try the following commands inside the container.
+After building and running the image, try the following commands inside the
+container.
 
 ROS 2:
 ```
@@ -47,7 +53,8 @@ To remove an image:
 docker image rm <IMAGE ID>
 ```
 
-To untag an image (if this is the only tag for the IMAGE ID, the image will be removed):
+To untag an image (if this is the only tag for the IMAGE ID, the image will be
+removed):
 ```
 docker image rmi <REPOSITORY:TAG>
 ```
