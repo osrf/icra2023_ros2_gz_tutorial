@@ -22,7 +22,7 @@
 #   docker
 #   nvidia-docker
 #   an X server
-# Recommended:
+# Optional:
 #   A joystick mounted to /dev/input/js0 or /dev/input/js1
 
 if [ $# -lt 1 ]
