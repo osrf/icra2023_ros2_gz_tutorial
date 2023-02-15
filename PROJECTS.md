@@ -2,9 +2,7 @@ A list of projects known to be using ROS 2 or the new Gazebo (or both).
 
 ROS 2
 =====
-* [ApexOS](https://www.apex.ai/apexgrace): ROS 2 certified for automotive
 * [ARIAC](https://www.nist.gov/el/intelligent-systems-division-73500/agile-robotics-industrial-automation-competition): Industrial automation competition
-* [AWS Robomaker](https://aws.amazon.com/blogs/robotics/aws-robomaker-now-supports-ros2-foxy-fitzroy-featuring-navigation2/): Cloud solution for robot development
 * [Drake-ROS](https://github.com/RobotLocomotion/drake-ros): Drake plugin for ROS 2 connectivity
 * [MBARI Buoy Sim](https://github.com/osrf/buoy_sim): Wave simulation for energy buoy control
 * [MBZIRC](https://github.com/osrf/mbzirc): Maritime competition for surface and aerial vehicles with manipulation
@@ -13,7 +11,6 @@ ROS 2
 * [Space ROS](https://space.ros.org/): An open-source space robotics framework for developing flight-quality robotic and autonomous space systems
 * [Turtlebot 3](https://github.com/ROBOTIS-GIT/turtlebot3/tree/humble-devel): Low-cost educational robot
 * [Turtlebot 4](https://clearpathrobotics.com/turtlebot-4/): Low-cost educational robot
-* [VIPER](https://www.nasa.gov/viper/lunar-operations): Rover for lunar ice exploration
 * [VRX](https://github.com/osrf/vrx): Virtual RobotX, maritime surface vehicle competition
 
 New Gazebo
