@@ -1,9 +1,8 @@
 # Tutorial: "All about ROS 2 and the new Gazebo"
 
-This is a proposed tutorial that has been accepted to ICRA 2023.
+This is a tutorial that has been accepted to ICRA 2023.
 
 This repository will be updated in the time leading up to the conference.
-
 
 ## Overview
 
@@ -25,6 +24,10 @@ Audience:
 - Gazebo-classic users wondering whether to migrate to new Gazebo
 - Users wondering whether the new Gazebo is right for them
 - Users of other simulators looking to learn about the new Gazebo and existing infrastructure we worked on with Nvidia, DeepMind, and Toyota Research Institute in the past few years to handle format conversions between SDF and formats used by OmniVerse, MuJoCo, and Drake.
+
+## Contributed list of ROS 2 and/or Gazebo projects
+
+Here's a [list](./PROJECTS.md) of products and projects publically known to be using ROS 2 and/or new Gazebo.
 
 ## Tentative schedule
 
