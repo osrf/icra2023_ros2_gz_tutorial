@@ -17,7 +17,7 @@ Please make sure all boxes are checked before submission. The last box is option
 
 # Tutorial addition
 
-<!-- This is most likely used by the maintainer to add new content. -->
+<!-- This is most likely used by the maintainers to add new content. -->
 
 Describe what tutorial content is being added.
 
