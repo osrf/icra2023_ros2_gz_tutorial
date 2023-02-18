@@ -81,6 +81,7 @@ done
 # E.g.:
 # -v "/opt/sublime_text:/opt/sublime_text" \
 
+# --ipc=host and --network=host are needed for no-NVIDIA Dockerfile to work
 docker run -it \
   -e DISPLAY \
   -e QT_X11_NO_MITSHM=1 \
@@ -93,5 +94,7 @@ docker run -it \
   --rm \
   --runtime=nvidia \
   --security-opt seccomp=unconfined \
+  --ipc=host \
+  --network=host \
   $DOCKER_OPTS \
   $IMG
