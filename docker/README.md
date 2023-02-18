@@ -2,14 +2,24 @@ Docker environments to run the tutorials in this repository.
 
 ## Prerequisites
 
-Install Docker and NVIDIA Docker 2 (if your machine has an NVIDIA GPU) following
+If your machine has an NVIDIA GPU, install Docker and NVIDIA Docker 2 following
 instructions [here](https://github.com/osrf/subt/wiki/Docker%20Install).
+
+If you don't have an NVIDIA GPU, Gazebo GUI will use software rendering via
+Mesa llvmpipe (you can check that in ~/.gz/rendering/ogre2.log after starting
+the Gazebo GUI).
 
 ## Example usage
 
 To build an image:
+
+If you have an NVIDIA graphics card, build using the NVIDIA Docker base image:
 ```
-./build.bash icra2023_tutorial_nvidia
+./build.bash icra2023_tutorial
+```
+Otherwise, build without NVIDIA Docker:
+```
+./build.bash icra2023_tutorial --no-nvidia
 ```
 
 To spin up a container from an image:
@@ -33,7 +43,9 @@ $ . /opt/ros/humble/setup.bash
 $ ros2 topic list
 /parameter_events
 /rosout
+$ rviz2
 ```
+The RViz GUI should show up.
 
 Gazebo:
 ```
@@ -58,3 +70,16 @@ removed):
 ```
 docker image rmi <REPOSITORY:TAG>
 ```
+
+## Troubleshoot
+
+# xauth permission denied
+
+If you get the following printout after executing `run.bash`, but the GUIs still
+work for you, you can ignore the messages.
+```
+xauth:  /tmp/.docker.xauth not writable, changes will be ignored
+xauth: (argv):1:  unable to read any entries from file "(stdin)"
+chmod: changing permissions of '/tmp/.docker.xauth': Operation not permitted
+```
+

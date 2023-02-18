@@ -25,8 +25,11 @@
 # https://hub.docker.com/r/nvidia/opengl
 #FROM nvidia/opengl:1.0-glvnd-devel-ubuntu22.04
 # Use homebrewed version until above exists officially
-# From ../nvidia_opengl_ubuntu22/Dockerfile
-FROM nvidia_opengl_ubuntu22:latest
+# Image is in ../nvidia_opengl_ubuntu22/Dockerfile
+#FROM nvidia_opengl_ubuntu22:latest
+# Base image. NVIDIA or no-NVIDIA.
+ARG base
+FROM ${base}
 
 # This avoids keyboard interaction when asked for geographic area
 ARG DEBIAN_FRONTEND=noninteractive
