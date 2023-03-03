@@ -11,8 +11,8 @@ Please make sure all boxes are checked before submission. The last box is option
 ### Criteria
 - [ ] Your code change is a short one-line title, description, and URL of the project.
 - [ ] Your added bullet item should maintain the alphanumerical order of the list.
-- [ ] Project must use ROS 2 or the new Gazebo (formerly Ignition, https://gazebosim.org/ )
-- [ ] Open source
+- [ ] Project must use ROS 2 or the new [Gazebo](https://gazebosim.org/) (formerly Ignition)
+- [ ] Open source. To help us quickly see, let us know how to find the source code if it's not obvious in your URL.
 - [ ] Preferably, there is a visual representation (image, video, etc) in the project URL you provide.
 
 # Tutorial addition
