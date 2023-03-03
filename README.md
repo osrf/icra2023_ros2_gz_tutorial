@@ -4,6 +4,14 @@ This is a tutorial that has been accepted to ICRA 2023.
 
 This repository will be updated in the time leading up to the conference.
 
+[Overview](#overview)
+
+[Contributing](#contributing)
+
+[Schedule](#schedule)
+
+[Organizers](#organizers)
+
 ## Overview
 
 Software development, an end in itself in industry, is often a means to an end in academic robotics research, where the goal is to create a prototype, which happens to require software, to illustrate that a novel method works in most cases, downscoped by its assumptions.
@@ -25,11 +33,46 @@ Audience:
 - Users wondering whether the new Gazebo is right for them
 - Users of other simulators looking to learn about the new Gazebo and existing infrastructure we worked on with Nvidia, DeepMind, and Toyota Research Institute in the past few years to handle format conversions between SDF and formats used by OmniVerse, MuJoCo, and Drake.
 
-## Contributed list of ROS 2 and/or Gazebo projects
+## Contributing
 
-Here's a [list](./PROJECTS.md) of products and projects publically known to be using ROS 2 and/or new Gazebo.
+Here's a [list](./PROJECTS.md) of open source products and projects publically known to be using ROS 2 and/or new Gazebo.
 
-## Tentative schedule
+If you would like to submit your project to be added this list, please follow the directions below.
+
+The list is meant to serve as usage examples for the community’s reference and interactions in their own time. It is not meant for for-profit advertisement. We do not promise to feature any of the entries live on the tutorial day.
+
+#### Criteria
+- Must use ROS 2 or the new [Gazebo](https://gazebosim.org) (formerly Ignition), i.e. if the project uses ROS 1 and [Gazebo-classic](https://classic.gazebosim.org), it does not satisfy this criterion.
+- Open source
+- Preferably, there is a visual representation (image, video, etc) in the URL you provide.
+
+#### What to submit
+
+This is not a contribution in the formal sense. We are simply asking for a project title, URL, and a one-line description (please keep it short).
+
+These should be substantial projects beyond hello-world tutorials and examples we already provide.
+
+For example projects, see recent [monthly Gazebo Community Meetings](https://community.gazebosim.org/tag/meeting) and [ROS News for the Week](https://discourse.ros.org/tag/weekly-update), e.g.
+- [Gazebo Community Meeting Aug 2022: Intern projects](https://community.gazebosim.org/t/community-meeting-interns-2022-aug-2022/1549)
+- [Gazebo Community Meeting Jun 2022: Surface ocean wave rendering and AUV simulation](https://community.gazebosim.org/t/community-meeting-maritime-jun-2022/1472)
+- [Gazebo Community Meeting Apr 2022: MOV.AI Flow ROS IDE](https://community.gazebosim.org/t/community-meeting-mov-ai-flow-ros-ide-apr-2022/1379)
+- [Gazebo Community Meeting Jan 2022: Pan-African competition](https://community.gazebosim.org/t/community-meeting-pan-african-competition-simulation-for-ci-jan-2022/1230)
+
+#### How to submit
+
+Open a pull request in this repository. Your code change should be a short one-line bullet list item added to the PROJECTS.md file. Fill out the pull request template for Project Contribution. Prefix your pull request title with [Project].
+
+#### Why submit
+
+Visibility for your open source project and community interaction.
+
+#### When to submit
+
+There is no formal deadline in the conventional sense of workshop contributions. View this as an open source contribution, where pull requests are opened and reviewed on a reasonable timeline.
+
+Thank you for your contribution.
+
+## Schedule
 
 While it is impossible to cover all of the software foundations underlying ROS 2 and Gazebo (or other simulators), we hope to expose attendees to such factors, the new features in ROS 2 and Gazebo, and give them an avenue of resources to follow when they encounter obstacles while using these software in their robotics research.
 
@@ -41,7 +84,7 @@ References
 
 [1] Steven Macenski, Tully Foote, Brian Gerkey, Chris Lalancette, and William Woodall. [Robot Operating System 2: Design, architecture, and uses in the wild](https://www.science.org/stoken/author-tokens/ST-483/full). Science Robotics, May 2022. Volume 7, issue 66. DOI 10.1126/scirobotics.abm6074
 
-Schedule (tentative):
+### Schedule (tentative):
 
 1. Welcome and Intro (5 mins)
 
@@ -140,6 +183,6 @@ Schedule (tentative):
 
 
 ## Organizers
-Mabel Zhang, Open Robotics
+Mabel Zhang, Open Robotics team at Intrinsic
 
-Chris Lalancette, Open Robotics
+Chris Lalancette, Open Robotics team at Intrinsic
