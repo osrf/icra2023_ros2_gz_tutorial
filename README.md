@@ -43,7 +43,7 @@ The list is meant to serve as usage examples for the community’s reference and
 
 #### Criteria
 - Must use ROS 2 or the new [Gazebo](https://gazebosim.org) (formerly Ignition), i.e. if the project uses ROS 1 and [Gazebo-classic](https://classic.gazebosim.org), it does not satisfy this criterion.
-- Open source. The easiest way for us to know is if you have a `LICENSE` file at the top-level. See [https://opensource.org/licenses](https://opensource.org/licenses)
+- Open source
 - Preferably, there is a visual representation (image, video, etc) in the URL you provide.
 
 #### What to submit
