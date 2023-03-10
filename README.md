@@ -98,6 +98,7 @@ References
             1. VIPER for space (publicly [announced](https://www.nasa.gov/viper/lunar-operations), code not public)
             1. SpaceROS
             1. Examples from the community
+                1. Deep reinforcement learning manipulation ROS 2 + MoveIt2 + Gazebo + OpenAI Gym ([Andrej Orsula GitHub](https://github.com/AndrejOrsula/drl_grasping))
         2. Pluggable comms/rmw layer at runtime (default middleware is DDS)
         3. Cross-platform (Linux, Ubuntu, macOS)
         4. Launch in Python, XML, YAML
