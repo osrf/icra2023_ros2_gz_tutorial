@@ -68,6 +68,7 @@ then
     xauth_list=$(xauth nlist $DISPLAY | sed -e 's/^..../ffff/')
     if [ ! -z "$xauth_list" ]
     then
+        touch $XAUTH
         echo $xauth_list | xauth -f $XAUTH nmerge -
     else
         touch $XAUTH
