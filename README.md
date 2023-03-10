@@ -94,10 +94,11 @@ References
     3. Present and elaborate on points of whether people should switch to ROS 2. (Chris, 30 mins)
         1. ROS 2 in different domains
             1. [Open Robotics Middleware Framework (Open-RMF)](https://www.open-rmf.org/) for indoor robot fleets ([GitHub](https://github.com/open-rmf))
-            2. MBZIRC for surface vessels ([GitHub](https://github.com/osrf/mbzirc))
-            3. MBARI Buoy Sim for underwater ([GitHub](https://github.com/osrf/buoy_sim))
-            4. VIPER for space (publicly [announced](https://www.nasa.gov/viper/lunar-operations), code not public)
-            5. Examples from the community
+            1. MBZIRC for surface vessels ([GitHub](https://github.com/osrf/mbzirc))
+            1. VIPER for space (publicly [announced](https://www.nasa.gov/viper/lunar-operations), code not public)
+            1. SpaceROS
+            1. Examples from the community
+                1. Deep reinforcement learning manipulation ROS 2 + MoveIt2 + Gazebo + OpenAI Gym ([Andrej Orsula GitHub](https://github.com/AndrejOrsula/drl_grasping))
         2. Pluggable comms/rmw layer at runtime (default middleware is DDS)
         3. Cross-platform (Linux, Ubuntu, macOS)
         4. Launch in Python, XML, YAML
@@ -109,7 +110,12 @@ References
             1. microROS for running on embedded systems
             2. navigation2
             3. MoveIt 2
-    4. Resources - links to [tutorials](https://docs.ros.org/en/humble/Tutorials.html), API documentation, design documents, Discourse, list of Working Groups, ROS 2 DDS for dummies (create such a page), ROSCon (all past videos free online), Diversity Scholarships, etc. (5 mins)
+    4. Simple DDS configurations
+        1. `RMW_IMPLEMENTATION`
+        1. Composition to avoid some performance problems
+        1. Inter-process communications can give very good performance
+        1. Per-DDS vendor config files
+    5. Resources - links to [tutorials](https://docs.ros.org/en/humble/Tutorials.html), API documentation, design documents, Discourse, list of Working Groups, simple ROS 2 DDS configurations, ROSCon (all past videos free online), Diversity Scholarships, etc. (5 mins)
     5. Q&A (5 mins)
 
 3. ROS 2 breakout discussions (20 mins)
@@ -117,11 +123,15 @@ References
 4. Break
 
 5. ROS 2 hands-on guided session with ROS 2 Dockerfile (90 mins)
-    1. Show the existence of ROS 2 [tutorials](https://docs.ros.org/en/humble/Tutorials.html)
-    2. Demonstrate CLI tools briefly
-    3. Brief walkthrough of code for simple publisher / subscriber example, demonstrate
-    4. Demonstrate what you can do with ROS 2 using an existing world from real applications in one of our public repositories above. Includes ROS 2, simulation in new Gazebo, RViz, robot controls.
-    5. Configuring DDS / DDS for dummies
+    1. Show the existence of ROS 2 [tutorials](https://docs.ros.org/en/humble/Tutorials.html) (2 mins)
+    1. Demonstrate CLI tools briefly (10 mins interactive)
+    1. Brief walkthrough of code for simple publisher / subscriber example, demonstrate (15 mins interactive)
+        1. C++ talker + Python subscriber
+    1. Demonstrate what you can do with ROS 2 using an existing world from real applications in one of our public repositories above. Includes ROS 2, simulation in new Gazebo, RViz, robot controls.
+       1. [TB4](https://github.com/turtlebot/turtlebot4_simulator/tree/humble) (45 mins interactive)
+          1. Launch files (new XML, show Python exists, new YAML)
+          1. Services and actions, if TB4 has them
+          1. Parameters
 
 6. Lunch
 
@@ -130,17 +140,16 @@ References
     2. Videos of different application domains: land, space, marine, manipulation (15 mins)
         1. DARPA SubTerranean Challenge ([GitHub](https://github.com/osrf/subt), [3D model collection on Fuel](https://app.gazebosim.org/OpenRobotics/fuel/collections/SubT%20Tech%20Repo)): physics-based rendering (PBR), levels (LOD)
         2. Demo worlds from Gazebo [Edifice](https://app.gazebosim.org/OpenRobotics/fuel/worlds/Edifice%20demo), [Fortress](https://app.gazebosim.org/OpenRobotics/fuel/worlds/Fortress%20demo), Garden releases. 3D models on Gazebo Fuel, a free online database
-        3. From community: Deep reinforcement learning manipulation ([Andrej Orsula GitHub](https://github.com/AndrejOrsula/drl_grasping))
-        4. MBZIRC for surface vessels ([GitHub](https://github.com/osrf/mbzirc), [3D model collection on Fuel](https://app.gazebosim.org/OpenRobotics/fuel/collections/mbzirc))
-        5. MBARI LRAUV ([GitHub](https://github.com/osrf/lrauv)): science data visualization, 3D plot of robot movement
-        6. MBARI Buoy Sim for underwater ([GitHub](https://github.com/osrf/buoy_sim))
-        7. From community: [Wave simulation](https://community.gazebosim.org/t/simulate-surface-waves-and-marine-vehicle-dynamics/1268/6)
-    3. Blender resources for modeling - SDF export, procedural generation (5 mins)
+        3. MBZIRC for surface vessels ([GitHub](https://github.com/osrf/mbzirc), [3D model collection on Fuel](https://app.gazebosim.org/OpenRobotics/fuel/collections/mbzirc))
+        4. MBARI LRAUV for underwater ([GitHub](https://github.com/osrf/lrauv)): science data visualization, 3D plot of robot movement
+        5. MBARI Buoy Sim ([GitHub](https://github.com/osrf/buoy_sim))
+        6. From community: [Rhys Mainwaring Wave simulation](https://community.gazebosim.org/t/simulate-surface-waves-and-marine-vehicle-dynamics/1268/6)
+    3. Blender resources for modeling - [SDF export](https://github.com/gazebosim/gz-sim/blob/31f7d5b384408eb88db3fcc85cc5529eb926f069/tutorials/blender_sdf_exporter.md), [procedural generation](https://github.com/gazebosim/gz-sim/blob/31f7d5b384408eb88db3fcc85cc5529eb926f069/tutorials/blender_procedural_datasets.md) (5 mins)
     4. Format conversions with other simulators (10 mins)
         - Nvidia Omniverse ([OSRF GitHub gz-omni](https://github.com/gazebosim/gz-omni), [Nvidia docs](https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/tutorial_ros2_gazebosim.html?highlight=gazebo), [OSRF announcement](https://community.gazebosim.org/t/ign-omni-is-available/1413), [Nvidia announcement](https://discourse.ros.org/t/nvidia-isaac-sim-latest-release-update-with-gazebo-bridge-and-new-features/26130), and [Nvidia Isaac announcement](https://developer.nvidia.com/blog/expedite-the-development-testing-and-training-of-ai-robots-with-isaac-sim))
         - MuJoCo ([OSRF gz-mujoco](https://github.com/gazebosim/gz-mujoco))
         - Drake ([OSRF GitHub Project Board](https://github.com/orgs/gazebosim/projects/2))
-    5. Resources - Tutorials, API documentation, design documents, Gazebo Community site, past Community Meetings, etc.
+    5. Resources - [Documentation](https://gazebosim.org/docs), [Tutorials](https://gazebosim.org/api/sim/7/tutorials.html), [API documentation](https://gazebosim.org/api/sim/7/), [Gazebo Community site](https://community.gazebosim.org/), past Gazebo Community Meetings, etc.
     6. Q&A
 
 8. Gazebo breakout discussions (20 mins)
@@ -148,27 +157,36 @@ References
 9. Break
 
 10. Gazebo hands-on guided session with ROS 2 Dockerfile, which ships new Gazebo (90 mins)
-    1. Show where to find [documentation](https://gazebosim.org/docs)
-    2. Show list of [development libraries](https://gazebosim.org/libs), explain gz-sim is entry point
-    3. Show [gazebosim GitHub org](https://github.com/gazebosim), [GitHub Project board](https://github.com/orgs/gazebosim/projects/1)
-    4. Show [Gazebo Fuel](https://app.gazebosim.org/dashboard), free online database of 3D models and worlds
-    5. Demonstrate CLI tools briefly, show `--help`, bash completion
-    6. Demonstrate what you can do with new Gazebo using a simple [example](https://github.com/gazebosim/gz-sim/tree/ign-gazebo6/examples) world that ships with Gazebo, such as [`multi_lrauv_race.sdf`](https://github.com/gazebosim/gz-sim/blob/ign-gazebo6/examples/worlds/multi_lrauv_race.sdf)
-        1. Physics panel: time steps, real time factor
-        2. Entity tree panel
-        3. Keyboard control of [`diff_drive.sdf`](https://github.com/gazebosim/gz-sim/blob/ign-gazebo6/examples/worlds/diff_drive.sdf)
-        4. Splash screen demo worlds
-    7. Demonstrate what you can do with new Gazebo using a world(s) from real applications in one of our public repositories above. Includes models from Gazebo Fuel.
-        1. Physics-based rendering (PBR)
-        2. 2D plots of topics
-        3. 3D plot of robot movement
-        4. Point cloud visualization
-        5. Levels (LOD) rendering
-        6. Multi-robot
-    8. Show developer resources
-        1. [Feature comparison](https://gazebosim.org/docs/fortress/comparison) with Gazebo-classic
-        2. [Roadmap](https://gazebosim.org/docs/fortress/roadmap)
-        3. [Development](https://gazebosim.org/docs/fortress/development) (CI, contributing guidelines, release process)
+    1. Show where to find [documentation](https://gazebosim.org/docs) (2 mins)
+    1. Show [Gazebo Fuel](https://app.gazebosim.org/dashboard), free online database of 3D models and worlds (5 mins)
+        1. MBZIRC boats, SubT, etc
+    1. Demonstrate CLI tools briefly, show `--help`, bash completion (15+ mins interactive)
+    1. Demonstrate what you can do with new Gazebo using simple [example](https://github.com/gazebosim/gz-sim/tree/ign-gazebo6/examples) worlds that ship with Gazebo
+        1. `gz sim` (10 mins)
+           1. Splash screen demo worlds - Nao robot
+        1. [`diff_drive.sdf`](https://github.com/gazebosim/gz-sim/blob/ign-gazebo6/examples/worlds/diff_drive.sdf) (5 mins)
+           1. Keyboard control
+        1. [`multi_lrauv_race.sdf`](https://github.com/gazebosim/gz-sim/blob/ign-gazebo6/examples/worlds/multi_lrauv_race.sdf) (15 mins)
+           1. Physics panel: time steps, real time factor
+           1. Entity tree panel
+           1. Multi-robot
+    1. Demonstrate what you can do with new Gazebo using a world(s) from real applications in one of our public repositories in the presentation list above. Includes models from Gazebo Fuel.
+        1. Physics-based rendering (PBR) (live demo presenter only, not interactive, to save time) (5 mins)
+        1. 2D plots of topics (10-15 mins)
+           1. [MBARI Buoy](https://github.com/osrf/buoy_entrypoint)
+        1. Point cloud visualization from csv (10 mins)
+           1. [MBARI LRAUV](https://github.com/osrf/lrauv/)
+        1. ~~Levels (LOD) rendering (10 mins)~~
+           1. [Levels tutorial](https://github.com/gazebosim/gz-sim/blob/gz-sim7/tutorials/levels.md)
+           1. `gz sim levels.sdf --levels`
+           1. `gz topic -t "/model/vehicle_blue/cmd_vel" -m gz.msgs.Twist -p "linear: {x: 4.0}"`
+           1. `gz topic -t "/model/vehicle_red/cmd_vel" -m gz.msgs.Twist -p "linear: {x: 2.0}"`
+    1. Show developer resources (5 mins)
+        1. Show list of [development libraries](https://gazebosim.org/libs), explain gz-sim is entry point
+        1. Show [gazebosim GitHub org](https://github.com/gazebosim), [GitHub Project board](https://github.com/orgs/gazebosim/projects/1)
+        1. [Feature comparison](https://gazebosim.org/docs/garden/comparison) with Gazebo-classic
+        1. [Roadmap](https://gazebosim.org/docs/garden/roadmap)
+        1. [Development](https://gazebosim.org/docs/garden/development) (CI, contributing guidelines, release process)
 
 11. Conclusion (30 mins)
     1. Ways to get involved with us
@@ -177,10 +195,9 @@ References
         3. Pull requests to our GitHub repositories: [ros2](https://github.com/ros2), [gazebosim](https://github.com/gazebosim/)
         4. Participate in ROS Working Groups - Navigation, Manipulation, Control, Embedded, Real-time, Safety, [Maritime](https://github.com/ros-maritime/community/), etc. See [Project Governance](https://docs.ros.org/en/rolling/The-ROS2-Project/Governance.html)
         5. Monthly Gazebo Community Meetings
-        6. Summer internships with us directly, or through Google Summer of Code (GSoC) and Google Season of Docs (GSoD)
+        6. Summer internships through Google Summer of Code (GSoC) and Google Season of Docs (GSoD)
         7. ROSCon annual conference, and Diversity Scholarships to attend ROSCon
     2. Open-floor Q&A and discussions
-
 
 ## Organizers
 Mabel Zhang, Open Robotics team at Intrinsic
