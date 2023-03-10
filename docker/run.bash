@@ -104,7 +104,7 @@ done
 # E.g.:
 # -v "/opt/sublime_text:/opt/sublime_text" \
 
-# Open it up so that local X connections work; this is necessary when running under XWayland
+# Relax X server permissions so that local X connections work; this is necessary when running under XWayland
 xhost + local:
 
 # --ipc=host and --network=host are needed for no-NVIDIA Dockerfile to work
