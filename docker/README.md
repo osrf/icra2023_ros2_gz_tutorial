@@ -1,4 +1,4 @@
-# Docker environments to run the tutorials in this repository.
+# Docker environments to run the tutorials in this repository
 
 ## Prerequisites
 
