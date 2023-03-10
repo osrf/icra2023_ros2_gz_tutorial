@@ -31,6 +31,30 @@ then
     exit 1
 fi
 
+# Default to NVIDIA
+DOCKER_OPTS="--runtime=nvidia"
+
+# Parse and remove args
+PARAMS=""
+while (( "$#" )); do
+  case "$1" in
+    --no-nvidia)
+        DOCKER_OPTS=""
+      shift
+      ;;
+    -*|--*=) # unsupported flags
+      echo "Error: Unsupported flag $1" >&2
+      exit 1
+      ;;
+    *) # preserve positional arguments
+      PARAMS="$PARAMS $1"
+      shift
+      ;;
+  esac
+done
+# set positional arguments in their proper place
+eval set -- "$PARAMS"
+
 IMG=$(basename $1)
 
 ARGS=("$@")
@@ -50,8 +74,6 @@ then
     fi
     chmod a+r $XAUTH
 fi
-
-DOCKER_OPTS=
 
 # Share your vim settings.
 VIMRC=~/.vimrc
@@ -92,7 +114,6 @@ docker run -it \
   -v "/dev/input:/dev/input" \
   --privileged \
   --rm \
-  --runtime=nvidia \
   --security-opt seccomp=unconfined \
   --ipc=host \
   --network=host \
