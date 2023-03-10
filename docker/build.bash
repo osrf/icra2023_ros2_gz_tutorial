@@ -70,11 +70,12 @@ user_id=$(id -u)
 image_name=$(basename $1)
 #image_plus_tag=$image_name:$(date +%Y_%b_%d_%H%M)
 # Tag as latest so don't have a dozen uniquely timestamped images hanging around
-image_plus_tag=$image_name$image_suffix:latest
+image_plus_tag=$image_name:latest
 
 echo "Building $image_name with base image $base"
 docker build --rm -t $image_plus_tag --build-arg base=$base --build-arg user_id=$user_id $DIR/$image_name
 echo "Built $image_plus_tag"
 
-#docker tag $image_plus_tag $image_name$image_suffix:latest
-#echo "Tagged as $image_name$image_suffix:latest"
+# Extra tag in case you have both the NVIDIA and no-NVIDIA images
+docker tag $image_plus_tag $image_name$image_suffix:latest
+echo "Tagged as $image_name$image_suffix:latest"
