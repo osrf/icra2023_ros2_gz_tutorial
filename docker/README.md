@@ -83,3 +83,7 @@ xauth: (argv):1:  unable to read any entries from file "(stdin)"
 chmod: changing permissions of '/tmp/.docker.xauth': Operation not permitted
 ```
 
+If they don't work, you can also try the following on the host machine:
+```
+xhost + local:
+```
