@@ -1,4 +1,4 @@
-Docker environments to run the tutorials in this repository.
+# Docker environments to run the tutorials in this repository
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ container.
 
 ROS 2:
 ```
-$ . /opt/ros/humble/setup.bash 
+$ . /opt/ros/humble/setup.bash
 $ ros2 topic list
 /parameter_events
 /rosout
@@ -73,7 +73,7 @@ docker image rmi <REPOSITORY:TAG>
 
 ## Troubleshoot
 
-# xauth permission denied
+### xauth permission denied
 
 If you get the following printout after executing `run.bash`, but the GUIs still
 work for you, you can ignore the messages.
@@ -83,7 +83,7 @@ xauth: (argv):1:  unable to read any entries from file "(stdin)"
 chmod: changing permissions of '/tmp/.docker.xauth': Operation not permitted
 ```
 
-If they don't work, you can also try the following on the host machine:
+If GUI programs don't work, you can also try the following on the host machine:
 ```
 xhost + local:
 ```

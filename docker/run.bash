@@ -104,6 +104,10 @@ done
 # E.g.:
 # -v "/opt/sublime_text:/opt/sublime_text" \
 
+# Relax X server permissions so that local X connections work; this is necessary
+# when running under XWayland
+xhost + local:
+
 # --ipc=host and --network=host are needed for no-NVIDIA Dockerfile to work
 docker run -it \
   -e DISPLAY \
@@ -120,3 +124,7 @@ docker run -it \
   --network=host \
   $DOCKER_OPTS \
   $IMG
+
+# Put X server permissions back to what they were.  If this script is killed
+# uncleanly, then this may not run.
+xhost - local:
