@@ -105,6 +105,7 @@ done
 # -v "/opt/sublime_text:/opt/sublime_text" \
 
 # --ipc=host and --network=host are needed for no-NVIDIA Dockerfile to work
+xhost + local:
 docker run -it \
   -e DISPLAY \
   -e QT_X11_NO_MITSHM=1 \
@@ -120,3 +121,4 @@ docker run -it \
   --network=host \
   $DOCKER_OPTS \
   $IMG
+xhost - local:
