@@ -23,13 +23,23 @@ Otherwise, build without NVIDIA Docker:
 ```
 
 To spin up a container from an image:
+
+If you built with NVIDIA, use
 ```
-./run.bash icra2023_tutorial
+./run.bash icra2023_tutorial_nvidia
+```
+Otherwise, use
+```
+./run.bash icra2023_tutorial_no_nvidia --no-nvidia
 ```
 
 To join a running container from another terminal:
 ```
-./join.bash icra2023_tutorial
+./join.bash icra2023_tutorial_nvidia
+```
+Or
+```
+./join.bash icra2023_tutorial_no_nvidia
 ```
 
 ## Test the image
