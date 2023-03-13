@@ -86,9 +86,9 @@ References
 
 ### Schedule (tentative):
 
-1. Welcome and Intro (5 mins)
+1. Welcome and Intro (9:00 am, 5 mins)
 
-2. Is ROS 2 right for me? (50 mins)
+2. Is ROS 2 right for me? (9:05 am, 50 mins)
     1. Discuss top 5 reasons collected at ICRA 2022 Philadelphia through informal conversations, why people aren't using ROS 2. (Mabel, 5 mins)
     2. Show the table in ROS 2 paper on Science Robotics highlighting ROS 1 vs. 2, 10 bite-size paragraphs of what's new in ROS 2, and 5 example use cases. (5 mins)
     3. Present and elaborate on points of whether people should switch to ROS 2. (Chris, 30 mins)
@@ -118,9 +118,9 @@ References
     5. Resources - links to [tutorials](https://docs.ros.org/en/humble/Tutorials.html), API documentation, design documents, Discourse, list of Working Groups, simple ROS 2 DDS configurations, ROSCon (all past videos free online), Diversity Scholarships, etc. (5 mins)
     5. Q&A (5 mins)
 
-3. ROS 2 breakout discussions (20 mins)
+3. ROS 2 breakout discussions (10:00 am, 20 mins)
 
-4. Break
+4. Break (10:20 am, 10 mins)
 
 5. ROS 2 hands-on guided session with ROS 2 Dockerfile (90 mins)
     1. Show the existence of ROS 2 [tutorials](https://docs.ros.org/en/humble/Tutorials.html) (2 mins)
@@ -133,9 +133,9 @@ References
           1. Services and actions, if TB4 has them
           1. Parameters
 
-6. Lunch
+6. Lunch (12:00-1:00 pm)
 
-7. All about the new Gazebo (50 mins)
+7. All about the new Gazebo (1:00 pm, 50 mins)
     1. What is the new Gazebo (5 mins)
     2. Videos of different application domains: land, space, marine, manipulation (15 mins)
         1. DARPA SubTerranean Challenge ([GitHub](https://github.com/osrf/subt), [3D model collection on Fuel](https://app.gazebosim.org/OpenRobotics/fuel/collections/SubT%20Tech%20Repo)): physics-based rendering (PBR), levels (LOD)
@@ -152,9 +152,9 @@ References
     5. Resources - [Documentation](https://gazebosim.org/docs), [Tutorials](https://gazebosim.org/api/sim/7/tutorials.html), [API documentation](https://gazebosim.org/api/sim/7/), [Gazebo Community site](https://community.gazebosim.org/), past Gazebo Community Meetings, etc.
     6. Q&A
 
-8. Gazebo breakout discussions (20 mins)
+8. Gazebo breakout discussions (2:00 pm, 20 mins)
 
-9. Break
+9. Break (2:20 pm, 10 minutes)
 
 10. Gazebo hands-on guided session with ROS 2 Dockerfile, which ships new Gazebo (90 mins)
     1. Show where to find [documentation](https://gazebosim.org/docs) (2 mins)
@@ -188,7 +188,7 @@ References
         1. [Roadmap](https://gazebosim.org/docs/garden/roadmap)
         1. [Development](https://gazebosim.org/docs/garden/development) (CI, contributing guidelines, release process)
 
-11. Conclusion (30 mins)
+11. Conclusion (4:00 pm, 30 mins)
     1. Ways to get involved with us
         1. For hands-on questions with the community: [ROS Answers](https://answers.ros.org/questions/), [Gazebo Answers](https://answers.gazebosim.org/questions/)
         2. For high-level discussions: [ROS Discourse](https://discourse.ros.org/), [Gazebo Community](https://community.gazebosim.org/)
