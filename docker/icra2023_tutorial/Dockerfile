@@ -20,9 +20,9 @@
 # Gazebo Garden binary install
 # https://gazebosim.org/docs/garden/install_ubuntu
 
-# Doesn't exist for Ubuntu 2022 yet at time of writing
 # Ubuntu with nvidia-docker2 beta opengl support
 # https://hub.docker.com/r/nvidia/opengl
+# doesn't exist for Ubuntu 22.04 yet at time of writing.
 #FROM nvidia/opengl:1.0-glvnd-devel-ubuntu22.04
 # Use homebrewed version until above exists officially
 # Image is in ../nvidia_opengl_ubuntu22/Dockerfile
