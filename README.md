@@ -118,11 +118,11 @@ References
     5. Resources - links to [tutorials](https://docs.ros.org/en/humble/Tutorials.html), API documentation, design documents, Discourse, list of Working Groups, simple ROS 2 DDS configurations, ROSCon (all past videos free online), Diversity Scholarships, etc. (5 mins)
     5. Q&A (5 mins)
 
-3. ROS 2 breakout discussions (10:00 am, 20 mins)
+3. ROS 2 breakout discussions (10:00 am, 30 mins)
 
-4. Break (10:20 am, 10 mins)
+4. Refreshment break (10:30 am, 10 mins)
 
-5. ROS 2 hands-on guided session with ROS 2 Dockerfile (90 mins)
+5. ROS 2 hands-on guided session with ROS 2 Dockerfile (10:40 am, 90 mins)
     1. Show the existence of ROS 2 [tutorials](https://docs.ros.org/en/humble/Tutorials.html) (2 mins)
     1. Demonstrate CLI tools briefly (10 mins interactive)
     1. Brief walkthrough of code for simple publisher / subscriber example, demonstrate (15 mins interactive)
@@ -133,9 +133,9 @@ References
           1. Services and actions, if TB4 has them
           1. Parameters
 
-6. Lunch (12:00-1:00 pm)
+6. Lunch (12:10-1:10 pm)
 
-7. All about the new Gazebo (1:00 pm, 50 mins)
+7. All about the new Gazebo (1:10 pm, 50 mins)
     1. What is the new Gazebo (5 mins)
     2. Videos of different application domains: land, space, marine, manipulation (15 mins)
         1. DARPA SubTerranean Challenge ([GitHub](https://github.com/osrf/subt), [3D model collection on Fuel](https://app.gazebosim.org/OpenRobotics/fuel/collections/SubT%20Tech%20Repo)): physics-based rendering (PBR), levels (LOD)
@@ -152,11 +152,11 @@ References
     5. Resources - [Documentation](https://gazebosim.org/docs), [Tutorials](https://gazebosim.org/api/sim/7/tutorials.html), [API documentation](https://gazebosim.org/api/sim/7/), [Gazebo Community site](https://community.gazebosim.org/), past Gazebo Community Meetings, etc.
     6. Q&A
 
-8. Gazebo breakout discussions (2:00 pm, 20 mins)
+8. Gazebo breakout discussions (2:00 pm, 30 mins)
 
-9. Break (2:20 pm, 10 minutes)
+9. Stretch break (2:30 pm, 10 minutes)
 
-10. Gazebo hands-on guided session with ROS 2 Dockerfile, which ships new Gazebo (90 mins)
+10. Gazebo hands-on guided session with ROS 2 Dockerfile, which ships new Gazebo (2:40 pm, 90 mins)
     1. Show where to find [documentation](https://gazebosim.org/docs) (2 mins)
     1. Show [Gazebo Fuel](https://app.gazebosim.org/dashboard), free online database of 3D models and worlds (5 mins)
         1. MBZIRC boats, SubT, etc
@@ -188,7 +188,9 @@ References
         1. [Roadmap](https://gazebosim.org/docs/garden/roadmap)
         1. [Development](https://gazebosim.org/docs/garden/development) (CI, contributing guidelines, release process)
 
-11. Conclusion (4:00 pm, 30 mins)
+11. Refreshment break (4:10 pm, 10 minutes)
+
+12. Conclusion (4:20 pm, 30 mins)
     1. Ways to get involved with us
         1. For hands-on questions with the community: [ROS Answers](https://answers.ros.org/questions/), [Gazebo Answers](https://answers.gazebosim.org/questions/)
         2. For high-level discussions: [ROS Discourse](https://discourse.ros.org/), [Gazebo Community](https://community.gazebosim.org/)
