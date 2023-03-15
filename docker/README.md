@@ -15,6 +15,7 @@ To build an image:
 
 If you have an NVIDIA graphics card, build using the NVIDIA Docker base image:
 ```
+./build.bash nvidia_opengl_ubuntu22
 ./build.bash icra2023_tutorial
 ```
 Otherwise, build without NVIDIA Docker:
