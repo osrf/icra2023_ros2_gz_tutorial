@@ -152,11 +152,11 @@ References
     5. Resources - [Documentation](https://gazebosim.org/docs), [Tutorials](https://gazebosim.org/api/sim/7/tutorials.html), [API documentation](https://gazebosim.org/api/sim/7/), [Gazebo Community site](https://community.gazebosim.org/), past Gazebo Community Meetings, etc.
     6. Q&A
 
-8. Gazebo breakout discussions (2:00 pm, 20 mins)
+8. Gazebo breakout discussions (2:00 pm, 30 mins)
 
-9. Stretch break (2:20 pm, 10 minutes)
+9. Stretch break (2:30 pm, 10 minutes)
 
-10. Gazebo hands-on guided session with ROS 2 Dockerfile, which ships new Gazebo (2:30 pm, 90 mins)
+10. Gazebo hands-on guided session with ROS 2 Dockerfile, which ships new Gazebo (2:40 pm, 90 mins)
     1. Show where to find [documentation](https://gazebosim.org/docs) (2 mins)
     1. Show [Gazebo Fuel](https://app.gazebosim.org/dashboard), free online database of 3D models and worlds (5 mins)
         1. MBZIRC boats, SubT, etc
@@ -188,9 +188,9 @@ References
         1. [Roadmap](https://gazebosim.org/docs/garden/roadmap)
         1. [Development](https://gazebosim.org/docs/garden/development) (CI, contributing guidelines, release process)
 
-11. Refreshment break (4:00 pm, 10 minutes)
+11. Refreshment break (4:10 pm, 10 minutes)
 
-12. Conclusion (4:10 pm, 30 mins)
+12. Conclusion (4:20 pm, 30 mins)
     1. Ways to get involved with us
         1. For hands-on questions with the community: [ROS Answers](https://answers.ros.org/questions/), [Gazebo Answers](https://answers.gazebosim.org/questions/)
         2. For high-level discussions: [ROS Discourse](https://discourse.ros.org/), [Gazebo Community](https://community.gazebosim.org/)
