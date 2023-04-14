@@ -12,6 +12,7 @@ ROS 2
 * [Turtlebot 3](https://github.com/ROBOTIS-GIT/turtlebot3/tree/humble-devel): Low-cost educational robot
 * [Turtlebot 4](https://clearpathrobotics.com/turtlebot-4/): Low-cost educational robot
 * [VRX](https://github.com/osrf/vrx): Virtual RobotX, maritime surface vehicle competition
+* [Aerostack2](https://github.com/aerostack2/aerostack2): An open-source autonomous multi-aerial-robots systems framework
 
 New Gazebo
 ==========
@@ -23,3 +24,4 @@ New Gazebo
 * [SubT](https://github.com/osrf/subt): DARPA Subterranean Challenge
 * [Turtlebot 4](https://clearpathrobotics.com/turtlebot-4/): Low-cost educational robot
 * [VRX](https://github.com/osrf/vrx): Virtual RobotX, maritime surface vehicle competition
+* [Aerostack2](https://github.com/aerostack2/aerostack2): An open-source autonomous multi-aerial-robots systems framework
