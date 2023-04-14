@@ -2,6 +2,7 @@ A list of projects known to be using ROS 2 or the new Gazebo (or both).
 
 ROS 2
 =====
+* [Aerostack2](https://github.com/aerostack2/aerostack2): An open-source autonomous multi-aerial-robots systems framework
 * [ARIAC](https://www.nist.gov/el/intelligent-systems-division-73500/agile-robotics-industrial-automation-competition): Industrial automation competition
 * [Drake-ROS](https://github.com/RobotLocomotion/drake-ros): Drake plugin for ROS 2 connectivity
 * [MBARI Buoy Sim](https://github.com/osrf/buoy_sim): Wave simulation for energy buoy control
@@ -15,6 +16,7 @@ ROS 2
 
 New Gazebo
 ==========
+* [Aerostack2](https://github.com/aerostack2/aerostack2): An open-source autonomous multi-aerial-robots systems framework
 * [MBARI Buoy Sim](https://github.com/osrf/buoy_sim): Wave simulation for energy buoy control
 * [MBARI LRAUV](https://github.com/osrf/lrauv): Underwater simulation for glider science missions
 * [MBZIRC](https://github.com/osrf/mbzirc): Maritime competition for surface and aerial vehicles with manipulation
