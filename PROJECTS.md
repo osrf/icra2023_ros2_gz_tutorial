@@ -2,6 +2,7 @@ A list of projects known to be using ROS 2 or the new Gazebo (or both).
 
 ROS 2
 =====
+* [Aerostack2](https://github.com/aerostack2/aerostack2): An open-source autonomous multi-aerial-robots systems framework
 * [ARIAC](https://www.nist.gov/el/intelligent-systems-division-73500/agile-robotics-industrial-automation-competition): Industrial automation competition
 * [Drake-ROS](https://github.com/RobotLocomotion/drake-ros): Drake plugin for ROS 2 connectivity
 * [MBARI Buoy Sim](https://github.com/osrf/buoy_sim): Wave simulation for energy buoy control
@@ -12,10 +13,10 @@ ROS 2
 * [Turtlebot 3](https://github.com/ROBOTIS-GIT/turtlebot3/tree/humble-devel): Low-cost educational robot
 * [Turtlebot 4](https://clearpathrobotics.com/turtlebot-4/): Low-cost educational robot
 * [VRX](https://github.com/osrf/vrx): Virtual RobotX, maritime surface vehicle competition
-* [Aerostack2](https://github.com/aerostack2/aerostack2): An open-source autonomous multi-aerial-robots systems framework
 
 New Gazebo
 ==========
+* [Aerostack2](https://github.com/aerostack2/aerostack2): An open-source autonomous multi-aerial-robots systems framework
 * [MBARI Buoy Sim](https://github.com/osrf/buoy_sim): Wave simulation for energy buoy control
 * [MBARI LRAUV](https://github.com/osrf/lrauv): Underwater simulation for glider science missions
 * [MBZIRC](https://github.com/osrf/mbzirc): Maritime competition for surface and aerial vehicles with manipulation
@@ -24,4 +25,3 @@ New Gazebo
 * [SubT](https://github.com/osrf/subt): DARPA Subterranean Challenge
 * [Turtlebot 4](https://clearpathrobotics.com/turtlebot-4/): Low-cost educational robot
 * [VRX](https://github.com/osrf/vrx): Virtual RobotX, maritime surface vehicle competition
-* [Aerostack2](https://github.com/aerostack2/aerostack2): An open-source autonomous multi-aerial-robots systems framework
