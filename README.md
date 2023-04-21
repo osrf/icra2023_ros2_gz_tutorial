@@ -199,6 +199,29 @@ References
         7. ROSCon annual conference, and Diversity Scholarships to attend ROSCon
     2. Open-floor Q&A and discussions
 
+## Breakouts
+
+### ROS 2
+
+Suggested discussion topics for ROS 2 breakout:
+
+1. What ROS version are you using, ROS 1 or 2? If you are not using ROS, what middleware are you using?
+1. What is your application domain?
+1. What problems have you encountered with ROS 1, if any? To your knowledge, does ROS 2 solve any of them?
+1. If you are using ROS 1, what stops you from migrating to ROS 2?
+1. If you have used both ROS 1 and ROS 2, what do you like and dislike about each? Are there problems in one version that are solved in the other?
+1. What problems have you encountered with ROS 2?
+
+### Gazebo
+
+Suggested discussion topics for Gazebo breakout:
+
+1. What simulator do you currently use? Why did you choose it? Which other simulators have you evaluated before choosing it, if any?
+1. If you are using a simulator, what are you using it for? Are you using it for development? For testing? For continuous integration?
+1. Have you ever used Gazebo-classic? Have you heard of the new Gazebo (formerly Ignition)? What do you know about the new Gazebo?
+1. What are the most important problems that your current simulator DOES address for your use case?
+1. What are the most important problems that simulators do not address for your use case? This can be a limit of the state of the art, or of the particular simulators you have tried. For example, contact physics, deformable objects, approximate hydrodynamics, rendering of specific environments, etc.
+
 ## Organizers
 Mabel Zhang, Open Robotics team at Intrinsic
 
