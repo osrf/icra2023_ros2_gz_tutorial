@@ -10,6 +10,8 @@ This repository will be updated in the time leading up to the conference.
 
 [Schedule](#schedule)
 
+[Breakouts](#breakouts)
+
 [Organizers](#organizers)
 
 ## Overview
@@ -200,6 +202,8 @@ References
     2. Open-floor Q&A and discussions
 
 ## Breakouts
+
+Please take notes [here](https://drive.google.com/drive/folders/17guPLFHlZiY3TJ-tWCqIEWgCdLxUG7Lg?usp=share_link).
 
 ### ROS 2
 
