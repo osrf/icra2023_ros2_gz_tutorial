@@ -104,3 +104,13 @@ RUN useradd -U --uid ${user_id} -ms /bin/bash $USERNAME \
 USER $USERNAME
 # When running a container start in the developer's home folder
 WORKDIR /home/$USERNAME
+
+# Build and install the ROS 2 documentation
+RUN cd /home/$USERNAME && git clone https://github.com/ros2/ros2_documentation && cd ros2_documentation \
+ && pip3 install -r requirements.txt && PATH=$PATH:/home/$USERNAME/.local/bin make multiversion \
+ && mkdir /home/$USERNAME/docs.ros.org \
+ && cp -av /home/$USERNAME/ros2_documentation/build/html/* /home/$USERNAME/docs.ros.org \
+ && rm -rf /home/$USERNAME/ros2_documentation
+
+# Start a webserver on localhost:9090 for the ROS 2 documentation, and drop to a bash shell
+CMD ["/bin/bash", "-c", "pushd /home/$USERNAME/docs.ros.org && python3 -m http.server 9090 >& /dev/null & /bin/bash"]
