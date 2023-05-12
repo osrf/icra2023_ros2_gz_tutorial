@@ -113,5 +113,5 @@ RUN cd /home/$USERNAME && git clone https://github.com/ros2/ros2_documentation &
  && rm -rf /home/$USERNAME/ros2_documentation
 
 # Install a start.bash script which will start a webserver on 9090 for the ROS 2 documentation
-RUN /bin/bash -c "echo -e '#!/bin/bash\npushd /home/$USERNAME/docs.ros.org && python3 -m http.server 9090 >& /dev/null &\n/bin/bash' > /home/$USERNAME/start.bash" && chmod +x /home/$USERNAME/start.bash
-CMD /home/$USERNAME/start.bash
+RUN /bin/bash -c "echo -e 'pushd /home/$USERNAME/docs.ros.org && python3 -m http.server 9090 >& /dev/null &\n/bin/bash' > /home/$USERNAME/start.bash" && chmod +x /home/$USERNAME/start.bash
+CMD ["/bin/bash", "-c", "/home/$USERNAME/start.bash"]
