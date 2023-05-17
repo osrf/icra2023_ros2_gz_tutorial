@@ -140,7 +140,10 @@ We do not intend to use both at the same time for the tutorial.
 It is possible to use Humble and Garden together, and we have real-world
 projects that do, though that is not a recommended combination.
 
-Make sure to export this environment variable:
+You will need to build the interface stack
+[`ros_gz`](https://github.com/gazebosim/ros_gz) from source.
+
+Then, make sure to export this environment variable:
 ```
 export GZ_VERSION=garden
 ```
