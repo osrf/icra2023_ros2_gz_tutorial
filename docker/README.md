@@ -128,3 +128,22 @@ If GUI programs don't work, you can also try the following on the host machine:
 ```
 xhost + local:
 ```
+
+### ROS 2 Humble and Gazebo Garden interoperability
+
+For the purpose of the ICRA tutorial, we set up ROS 2 and Gazebo separately,
+since they are run as two separate tutorials.
+This allows us to show you the latest versions of each at the time of writing
+(ROS 2 Humble and Gazebo Garden).
+We do not intend to use both at the same time for the tutorial.
+
+It is possible to use Humble and Garden together, and we have real-world
+projects that do, though that is not a recommended combination.
+
+Make sure to export this environment variable:
+```
+export GZ_VERSION=garden
+```
+
+For details, see Gazebo documentation on
+[Installing Gazebo with ROS](https://gazebosim.org/docs/garden/ros_installation).
