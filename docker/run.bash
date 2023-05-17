@@ -32,7 +32,11 @@ then
 fi
 
 # Default to NVIDIA
-DOCKER_OPTS="--runtime=nvidia"
+if [[ -x "$(command -v dpkg)" ]] && dpkg --compare-versions "$(docker version --format '{{.Server.Version}}')" gt "19.3"; then
+  DOCKER_OPTS="--gpus=all"
+else
+  DOCKER_OPTS="--runtime=nvidia"
+fi
 
 # Parse and remove args
 PARAMS=""
