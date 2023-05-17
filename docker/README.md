@@ -2,11 +2,14 @@
 
 ## Prerequisites
 
+These instructions were tested on Ubuntu Jammy (22.04). Other recent versions
+should work as well.
+
 If your machine has an NVIDIA GPU, install Docker and NVIDIA Docker 2 following
 instructions [here](https://github.com/osrf/subt/wiki/Docker%20Install).
 
 If you don't have an NVIDIA GPU, Gazebo GUI will use software rendering via
-Mesa llvmpipe (you can check that in ~/.gz/rendering/ogre2.log after starting
+Mesa llvmpipe (you can check that in `~/.gz/rendering/ogre2.log` after starting
 the Gazebo GUI).
 
 ## Pull from DockerHub
