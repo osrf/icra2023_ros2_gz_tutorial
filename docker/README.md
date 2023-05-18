@@ -2,31 +2,76 @@
 
 ## Prerequisites
 
+These instructions were tested on Ubuntu Jammy (22.04). Other recent versions
+should work as well.
+
 If your machine has an NVIDIA GPU, install Docker and NVIDIA Docker 2 following
 instructions [here](https://github.com/osrf/subt/wiki/Docker%20Install).
 
 If you don't have an NVIDIA GPU, Gazebo GUI will use software rendering via
-Mesa llvmpipe (you can check that in ~/.gz/rendering/ogre2.log after starting
+Mesa llvmpipe (you can check that in `~/.gz/rendering/ogre2.log` after starting
 the Gazebo GUI).
 
-## Example usage
+## Pull from DockerHub
 
-To build an image:
+This image (and possibly some extra data) is built and pushed to DockerHub under
+[osrf/icra2023_ros2_gz_tutorial](https://hub.docker.com/r/osrf/icra2023_ros2_gz_tutorial/tags).
+
+You can pull it from DockerHub and skip building it locally:
+```
+docker pull osrf/icra2023_ros2_gz_tutorial:<tag>
+```
+Replace `<tag>` with `tutorial_nvidia` or `tutorial_no_nvidia`, depending on whether you
+have an NVIDIA GPU.
+
+## Build the image locally
+
+Skip this step if you already pulled the image from DockerHub.
 
 If you have an NVIDIA graphics card, build using the NVIDIA Docker base image:
 ```
 ./build.bash nvidia_opengl_ubuntu22
 ./build.bash icra2023_tutorial
 ```
+
 Otherwise, build without NVIDIA Docker:
 ```
 ./build.bash icra2023_tutorial --no-nvidia
 ```
 
-To spin up a container from an image:
+A few tags will be created for the same image, for convenience of running
+commands.
+
+## Run the image
+
+To spin up a container from an image, this should work whether you pulled from
+DockerHub or built locally:
+```
+# If you have NVIDIA GPU
+./run.bash osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia
+
+# Without NVIDIA GPU
+./run.bash osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia --no-nvidia
+```
+
+For convenience, if you built the image locally, this is an equivalent command
+that you can tab-complete:
 ```
 ./run.bash icra2023_tutorial
 ```
+
+You can see the list of all images with
+```
+docker images
+```
+
+You can set up an alias so that you don't have to type the command every time.
+For example, replace the path and image name to yours:
+```
+alias run_osrf_icra="/absolute/path/to/run.bash osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia"
+```
+
+## Open another terminal in the running container
 
 To join a running container from another terminal:
 ```
@@ -53,6 +98,13 @@ Gazebo:
 gz sim
 ```
 The Gazebo GUI should show up.
+
+## Look at ROS 2 documentation locally
+
+The ROS 2 documentaion is built locally in the Dockerfile.
+
+Open a web browser and go to `localhost:9090`. You should see the documentation
+site.
 
 ## Docker cheat sheet
 
@@ -88,3 +140,25 @@ If GUI programs don't work, you can also try the following on the host machine:
 ```
 xhost + local:
 ```
+
+### ROS 2 Humble and Gazebo Garden interoperability
+
+For the purpose of the ICRA tutorial, we set up ROS 2 and Gazebo separately,
+since they are run as two separate tutorials.
+This allows us to show you the latest versions of each at the time of writing
+(ROS 2 Humble and Gazebo Garden).
+We do not intend to use both at the same time for the tutorial.
+
+It is possible to use Humble and Garden together, and we have real-world
+projects that do, though that is not a recommended combination.
+
+You will need to build the interface stack
+[`ros_gz`](https://github.com/gazebosim/ros_gz) from source.
+
+Then, make sure to export this environment variable:
+```
+export GZ_VERSION=garden
+```
+
+For details, see Gazebo documentation on
+[Installing Gazebo with ROS](https://gazebosim.org/docs/garden/ros_installation).
