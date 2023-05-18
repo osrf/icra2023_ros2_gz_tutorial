@@ -55,7 +55,15 @@ done
 # set positional arguments in their proper place
 eval set -- "$PARAMS"
 
-IMG=$(basename $1)
+# Works for image names containing "/" character, but cannot run from another
+# directory
+IMG="$1"
+#IMG=$(basename $1)
+# Truncate last "/" in case using bash-complete for directory name
+if [[ $IMG == */ ]]; then
+  IMG=${IMG::-1}
+fi
+echo $IMG
 
 ARGS=("$@")
 WORKSPACES=("${ARGS[@]:1}")

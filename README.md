@@ -6,6 +6,8 @@ This repository will be updated in the time leading up to the conference.
 
 [Overview](#overview)
 
+[Quick Start](#quick-start)
+
 [Contributing](#contributing)
 
 [Schedule](#schedule)
@@ -34,6 +36,15 @@ Audience:
 - Gazebo-classic users wondering whether to migrate to new Gazebo
 - Users wondering whether the new Gazebo is right for them
 - Users of other simulators looking to learn about the new Gazebo and existing infrastructure we worked on with Nvidia, DeepMind, and Toyota Research Institute in the past few years to handle format conversions between SDF and formats used by OmniVerse, MuJoCo, and Drake.
+
+## Quick Start
+
+Clone this repository:
+```
+git clone https://github.com/osrf/icra2023_ros2_gz_tutorial.git
+```
+
+Follow the installation instructions in [`docker/README.md`](https://github.com/osrf/icra2023_ros2_gz_tutorial/blob/main/docker/README.md) to get set up and running.
 
 ## Contributing
 

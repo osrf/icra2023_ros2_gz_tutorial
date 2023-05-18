@@ -36,7 +36,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Default base image, defined in nvidia_opengl_ubuntu22/Dockerfile
 base="nvidia_opengl_ubuntu22:latest"
-image_suffix="_nvidia"
+tag_suffix="_nvidia"
 
 # Parse and remove args
 PARAMS=""
@@ -44,7 +44,7 @@ while (( "$#" )); do
   case "$1" in
     --no-nvidia)
       base="ubuntu:jammy"
-      image_suffix="_no_nvidia"
+      tag_suffix="_no_nvidia"
       shift
       ;;
     -*|--*=) # unsupported flags
@@ -68,14 +68,18 @@ fi
 
 user_id=$(id -u)
 image_name=$(basename $1)
-#image_plus_tag=$image_name:$(date +%Y_%b_%d_%H%M)
-# Tag as latest so don't have a dozen uniquely timestamped images hanging around
+
+# Use same name as source directory so can tab-complete on run.bash
 image_plus_tag=$image_name:latest
 
 echo "Building $image_name with base image $base"
 docker build --rm -t $image_plus_tag --build-arg base=$base --build-arg user_id=$user_id $DIR/$image_name
 echo "Built $image_plus_tag"
 
-# Extra tag in case you have both the NVIDIA and no-NVIDIA images
-docker tag $image_plus_tag $image_name$image_suffix:latest
-echo "Tagged as $image_name$image_suffix:latest"
+# If building the tutorial image
+if [[ "$image_name" == icra2023_tutorial ]]; then
+  # DockerHub repo name
+  repo_plus_tag_suffix="osrf/icra2023_ros2_gz_tutorial:tutorial$tag_suffix"
+  docker tag $image_plus_tag $repo_plus_tag_suffix
+  echo "Tagged as $repo_plus_tag_suffix"
+fi
