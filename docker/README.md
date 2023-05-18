@@ -54,9 +54,21 @@ DockerHub or built locally:
 ./run.bash osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia --no-nvidia
 ```
 
-If you built the image locally, this is a shorter, equivalent command:
+For convenience, if you built the image locally, this is an equivalent command
+that you can tab-complete:
 ```
 ./run.bash icra2023_tutorial
+```
+
+You can see the list of all images with
+```
+docker images
+```
+
+You can set up an alias so that you don't have to type the command every time.
+For example, replace the path and image name to yours:
+```
+alias run_osrf_icra="/absolute/path/to/run.bash osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia"
 ```
 
 ## Open another terminal in the running container
