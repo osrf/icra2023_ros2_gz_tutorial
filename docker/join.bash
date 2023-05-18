@@ -22,7 +22,14 @@ IMG=$(basename $1)
 # cannot use `basename`.
 #IMG="$1"
 
+# If the user is not in the docker group, run the docker command with sudo
+if [[ $(grep /etc/group -e "docker") == *"${USER}"* ]]; then
+  DOCKER_CMD_PREFIX=""
+else
+  DOCKER_CMD_PREFIX="sudo"
+fi
+
 xhost +
 containerid=$(docker ps -aqf "ancestor=${IMG}")
-docker exec --privileged -e DISPLAY=${DISPLAY} -e LINES=`tput lines` -it ${containerid} bash
+${DOCKER_CMD_PREFIX} docker exec --privileged -e DISPLAY=${DISPLAY} -e LINES=`tput lines` -it ${containerid} bash
 xhost -
