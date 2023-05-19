@@ -1,12 +1,22 @@
 # Docker environments to run the tutorials in this repository
 
-## Prerequisites
-
 These instructions were tested on Ubuntu Jammy (22.04). Other recent versions
 should work as well.
 
-If your machine has an NVIDIA GPU, install Docker and NVIDIA Docker 2 following
-instructions [here](https://github.com/osrf/subt/wiki/Docker%20Install).
+## Prerequisites
+
+Before starting, please ensure that Docker is installed and configured on your
+system by following the instructions
+[here](https://github.com/osrf/subt/wiki/Docker%20Install).
+
+While following the instructions, please add your user account to the docker
+group in order to avoid permission issues by following the instructions under
+the Troubleshooting section
+[here](https://github.com/osrf/subt/wiki/Docker%20Install#troubleshooting).
+
+If your machine has an NVIDIA GPU, make sure to also install NVIDIA Docker 2
+following the instructions
+[here](https://github.com/osrf/subt/wiki/Docker%20Install#install-nvidia-docker).
 
 If you don't have an NVIDIA GPU, Gazebo GUI will use software rendering via
 Mesa llvmpipe (you can check that in `~/.gz/rendering/ogre2.log` after starting
