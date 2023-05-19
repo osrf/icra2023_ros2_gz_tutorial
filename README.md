@@ -1,8 +1,6 @@
 # Tutorial: "All about ROS 2 and the new Gazebo"
 
-This is a tutorial that has been accepted to ICRA 2023.
-
-This repository will be updated in the time leading up to the conference.
+[Quick Links](#quick-links)
 
 [Overview](#overview)
 
@@ -15,6 +13,16 @@ This repository will be updated in the time leading up to the conference.
 [Breakouts](#breakouts)
 
 [Organizers](#organizers)
+
+## Quick Links
+
+This GitHub repository: [bit.ly/icra23_ros_git](https://github.com/osrf/icra2023_ros2_gz_tutorial)
+
+Docker Hub repository: [bit.ly/icra23_ros_docker](https://hub.docker.com/r/osrf/icra2023_ros2_gz_tutorial/tags)
+
+Slides: TBP
+
+Breakout discussions: [community notes](https://drive.google.com/drive/folders/17guPLFHlZiY3TJ-tWCqIEWgCdLxUG7Lg?usp=share_link)
 
 ## Overview
 
