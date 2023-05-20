@@ -1,5 +1,7 @@
 # Tutorial: "All about ROS 2 and the new Gazebo"
 
+**Please make sure to set up your laptop environment BEFORE the conference, if you plan on attending the hands-on session, as the conference WiFi will not support everyone downloading 2-4 GB on the day of the tutorial. See [Quick Start](#quick-start) below.**
+
 [Quick Links](#quick-links)
 
 [Overview](#overview)
@@ -51,6 +53,8 @@ Clone this repository:
 ```
 git clone https://github.com/osrf/icra2023_ros2_gz_tutorial.git
 ```
+
+We will be using Ubuntu Jammy (22.04), ROS 2 Humble, and Gazebo Garden.
 
 Follow the installation instructions in [`docker/README.md`](https://github.com/osrf/icra2023_ros2_gz_tutorial/blob/main/docker/README.md) to get set up and running.
 
