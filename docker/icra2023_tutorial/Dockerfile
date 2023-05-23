@@ -112,5 +112,13 @@ RUN cd /home/$USERNAME && git clone https://github.com/ros2/ros2_documentation &
  && cp -av /home/$USERNAME/ros2_documentation/build/html/* /home/$USERNAME/docs.ros.org \
  && rm -rf /home/$USERNAME/ros2_documentation
 
+# Copy Gazebo Fuel data from host.
+# Assumes Dockerfile is being built from a machine that has downloaded
+# Fuel data to a directory ../fuel/ . Otherwise, comment out these lines.
+#RUN mkdir -p "/home/$USERNAME/.gz/fuel"
+#COPY --chown=$USERNAME \
+#  ["fuel", \
+#  "/home/$USERNAME/.gz/fuel"]
+
 # Start a webserver on localhost:9090 for the ROS 2 documentation, and drop to a bash shell
 CMD ["/bin/bash", "-c", "pushd /home/$USERNAME/docs.ros.org && python3 -m http.server 9090 >& /dev/null & /bin/bash"]

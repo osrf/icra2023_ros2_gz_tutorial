@@ -73,7 +73,7 @@ image_name=$(basename $1)
 image_plus_tag=$image_name:latest
 
 echo "Building $image_name with base image $base"
-docker build --rm -t $image_plus_tag --build-arg base=$base --build-arg user_id=$user_id $DIR/$image_name
+docker build --rm -t $image_plus_tag --build-arg base=$base --build-arg user_id=$user_id -f $DIR/$image_name/Dockerfile .
 echo "Built $image_plus_tag"
 
 # If building the tutorial image
