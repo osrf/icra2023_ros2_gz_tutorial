@@ -52,46 +52,6 @@ Otherwise, build without NVIDIA Docker:
 A few tags will be created for the same image, for convenience of running
 commands.
 
-### For maintainers building image to push to DockerHub
-
-To speed up load time of Gazebo worlds containing large 3D models from Fuel
-(e.g. on tutorial day), you can burn the Fuel data into the image ahead of time.
-
-Follow the section below to run the image, then launch Gazebo with your desired
-worlds (for splash screen worlds, simply run `gz sim` and select the worlds
-from the splash screen).
-
-The models may take a while to download from Fuel, while the Gazebo window
-remains black. Once the world is loaded, close Gazebo.
-
-Repeat for each world desired.
-
-Outside the container, on the host machine, copy the data out from the Docker
-container, to this directory (`./fuel`):
-```
-docker cp trusting_albattani:/home/developer/.gz/fuel fuel
-```
-
-Uncomment these lines in `icra2023_tutorial/Dockerfile`:
-```
-RUN mkdir -p "/home/$USERNAME/.gz/fuel"
-COPY --chown=$USERNAME \
-  ["fuel", \
-  "/home/$USERNAME/.gz/fuel"]
-```
-
-Then rebuild the image as above.
-Now the image will contain all the Fuel models of the Gazebo worlds you loaded.
-Next time you run the image, it will not need to download the Fuel data (unless
-a new version of a model becomes available).
-
-To push to DockerHub, make sure you have built both tags, then run
-```
-docker login
-docker push osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia
-docker push osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia
-```
-
 ## Run the image
 
 To spin up a container from an image, this should work whether you pulled from
@@ -214,3 +174,49 @@ export GZ_VERSION=garden
 
 For details, see Gazebo documentation on
 [Installing Gazebo with ROS](https://gazebosim.org/docs/garden/ros_installation).
+
+## For maintainers
+
+### For maintainers building image for DockerHub
+
+To speed up load time of Gazebo worlds containing large 3D models from Fuel
+(e.g. on tutorial day), you can burn the Fuel data into the image ahead of time.
+
+Follow the section below to run the image, then launch Gazebo with your desired
+worlds (for splash screen worlds, simply run `gz sim` and select the worlds
+from the splash screen).
+
+The models may take a while to download from Fuel, while the Gazebo window
+remains black. Once the world is loaded, close Gazebo.
+
+Repeat for each world desired.
+
+Outside the container, on the host machine, copy the data out from the Docker
+container, to this directory (`./fuel`):
+```
+docker cp trusting_albattani:/home/developer/.gz/fuel fuel
+```
+
+Uncomment these lines in `icra2023_tutorial/Dockerfile`:
+```
+RUN mkdir -p "/home/$USERNAME/.gz/fuel"
+COPY --chown=$USERNAME \
+  ["fuel", \
+  "/home/$USERNAME/.gz/fuel"]
+```
+
+Then rebuild the image as above.
+Now the image will contain all the Fuel models of the Gazebo worlds you loaded.
+Next time you run the image, it will not need to download the Fuel data (unless
+a new version of a model becomes available).
+
+### For maintainers only: Push to DockerHub
+
+Skip this section if you are not a maintainer of this repository.
+
+To push to DockerHub, make sure you have built both tags, then run
+```
+docker login
+docker push osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia
+docker push osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia
+```
