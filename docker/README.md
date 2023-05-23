@@ -22,12 +22,15 @@ If you don't have an NVIDIA GPU, Gazebo GUI will use software rendering via
 Mesa llvmpipe (you can check that in `~/.gz/rendering/ogre2.log` after starting
 the Gazebo GUI).
 
-## Pull from DockerHub
+## Pull from DockerHub (recommended)
 
-This image (and possibly some extra data) is built and pushed to DockerHub under
+This is the easiest way to get set up and running.
+
+The image in this directory, along with 3D models used in the tutorial, is
+built and pushed to DockerHub under
 [osrf/icra2023_ros2_gz_tutorial](https://hub.docker.com/r/osrf/icra2023_ros2_gz_tutorial/tags).
 
-You can pull it from DockerHub and skip building it locally:
+You can pull it from DockerHub:
 ```
 docker pull osrf/icra2023_ros2_gz_tutorial:<tag>
 ```
@@ -37,6 +40,10 @@ have an NVIDIA GPU.
 ## Build the image locally
 
 Skip this step if you already pulled the image from DockerHub.
+
+This builds the image from scratch. This gives you a working environment, but
+it does not contain some extra data that we included in the images on DockerHub
+intended to make parts of the tutorial possible without WiFi.
 
 If you have an NVIDIA graphics card, build using the NVIDIA Docker base image:
 ```
