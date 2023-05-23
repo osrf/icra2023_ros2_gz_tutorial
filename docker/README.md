@@ -85,6 +85,13 @@ Now the image will contain all the Fuel models of the Gazebo worlds you loaded.
 Next time you run the image, it will not need to download the Fuel data (unless
 a new version of a model becomes available).
 
+To push to DockerHub, make sure you have built both tags, then run
+```
+docker login
+docker push osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia
+docker push osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia
+```
+
 ## Run the image
 
 To spin up a container from an image, this should work whether you pulled from
