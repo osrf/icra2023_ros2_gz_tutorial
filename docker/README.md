@@ -101,6 +101,8 @@ For convenience, if you built the image locally, this is an equivalent command
 that you can tab-complete:
 ```
 ./run.bash icra2023_tutorial
+# Or
+./run.bash icra2023_tutorial --no-nvidia
 ```
 
 You can see the list of all images with
