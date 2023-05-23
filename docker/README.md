@@ -204,11 +204,5 @@ docker save osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia | gzip > tutorial_nvi
 docker save osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia | gzip > tutorial_no_nvidia.tar.gz
 ```
 
-Regular tar (larger file size):
-```
-docker save osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia > tutorial_nvidia.tar
-docker save osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia > tutorial_no_nvidia.tar
-```
-
 To load the file back into Docker as an image, use `docker load` as described
 in a section above.
