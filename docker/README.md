@@ -22,7 +22,7 @@ If you don't have an NVIDIA GPU, Gazebo GUI will use software rendering via
 Mesa llvmpipe (you can check that in `~/.gz/rendering/ogre2.log` after starting
 the Gazebo GUI).
 
-## Pull from DockerHub (recommended)
+## Option 1: Pull from DockerHub (recommended)
 
 This is the easiest way to get set up and running.
 
@@ -37,7 +37,7 @@ docker pull osrf/icra2023_ros2_gz_tutorial:<tag>
 Replace `<tag>` with `tutorial_nvidia` or `tutorial_no_nvidia`, depending on whether you
 have an NVIDIA GPU.
 
-## Build the image locally
+## Option 2: Build the image locally
 
 Skip this step if you already pulled the image from DockerHub.
 
@@ -58,6 +58,22 @@ Otherwise, build without NVIDIA Docker:
 
 A few tags will be created for the same image, for convenience of running
 commands.
+
+## Option 3: Load the image from a file
+
+Skip this step if you already pulled the image from DockerHub, or if you built
+the image locally.
+
+If the two options above fail for you, you may be given a compressed file
+(e.g. on the day of the tutorial, but please try the two options above first).
+
+You can load the file as a Docker image, e.g.
+```
+docker load < file.tar.gz
+```
+
+This should be quick, but of course depends on your machine specifications
+(took 1 minute from internal SSD on Dell XPS 15 9570 from 2018).
 
 ## Run the image
 
@@ -227,3 +243,19 @@ docker login
 docker push osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia
 docker push osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia
 ```
+
+### For maintainers only: Save Docker image to disk
+
+You may want to save the compiled Docker image to disk, e.g. on a USB drive.
+
+This will take a few minutes (gzip option to internal SSD took 5 minutes on
+Dell XPS 15 9570 from 2018).
+
+You can use gzip (file size much smaller than tar):
+```
+docker save osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia | gzip > tutorial_nvidia.tar.gz
+docker save osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia | gzip > tutorial_no_nvidia.tar.gz
+```
+
+To load the file back into Docker as an image, use `docker load` as described
+in a section above.

@@ -88,7 +88,34 @@ RUN /bin/sh -c 'wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share
     python3-rosdep \
     python3-vcstool \
     python3-colcon-common-extensions \
+    python3-colcon-mixin \
+    ros-humble-control-msgs \
+    ros-humble-controller-manager \
     ros-humble-desktop \
+    ros-humble-generate-parameter-library \
+    ros-humble-geometric-shapes \
+    ros-humble-gripper-controllers \
+    ros-humble-joint-state-broadcaster \
+    ros-humble-joint-state-publisher \
+    ros-humble-joint-trajectory-controller \
+    ros-humble-moveit-common \
+    ros-humble-moveit-configs-utils \
+    ros-humble-moveit-core \
+    ros-humble-moveit-hybrid-planning \
+    ros-humble-moveit-msgs \
+    ros-humble-moveit-resources-panda-moveit-config \
+    ros-humble-moveit-ros-move-group \
+    ros-humble-moveit-ros-perception \
+    ros-humble-moveit-ros-planning \
+    ros-humble-moveit-ros-planning-interface \
+    ros-humble-moveit-ros-visualization \
+    ros-humble-moveit-servo \
+    ros-humble-moveit-visual-tools \
+    ros-humble-moveit \
+    ros-humble-rmw-cyclonedds-cpp \
+    ros-humble-ros2-control \
+    ros-humble-rviz-visual-tools \
+    ros-humble-xacro \
     gz-garden \
  && apt-get clean
 
@@ -105,6 +132,12 @@ USER $USERNAME
 # When running a container start in the developer's home folder
 WORKDIR /home/$USERNAME
 
+# Initialize rosdep
+RUN sudo rosdep init && rosdep update
+
+# Add colcon mixins
+RUN colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && colcon mixin update default && rm -rf log
+
 # Build and install the ROS 2 documentation
 RUN cd /home/$USERNAME && git clone https://github.com/ros2/ros2_documentation && cd ros2_documentation \
  && pip3 install -r requirements.txt && PATH=$PATH:/home/$USERNAME/.local/bin make multiversion \
@@ -119,6 +152,8 @@ RUN cd /home/$USERNAME && git clone https://github.com/ros2/ros2_documentation &
 #COPY --chown=$USERNAME \
 #  ["fuel", \
 #  "/home/$USERNAME/.gz/fuel"]
+
+RUN mkdir -p /home/$USERNAME/ws_moveit2/src && cd /home/$USERNAME/ws_moveit2/src && git clone https://github.com/ros-planning/moveit2_tutorials -b humble --depth 1 && git clone https://github.com/ros-planning/moveit_task_constructor.git -b humble --depth 1
 
 # Start a webserver on localhost:9090 for the ROS 2 documentation, and drop to a bash shell
 CMD ["/bin/bash", "-c", "pushd /home/$USERNAME/docs.ros.org && python3 -m http.server 9090 >& /dev/null & /bin/bash"]
