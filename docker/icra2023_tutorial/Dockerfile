@@ -145,15 +145,17 @@ RUN cd /home/$USERNAME && git clone https://github.com/ros2/ros2_documentation &
  && cp -av /home/$USERNAME/ros2_documentation/build/html/* /home/$USERNAME/docs.ros.org \
  && rm -rf /home/$USERNAME/ros2_documentation
 
-# Copy Gazebo Fuel data from host.
-# Assumes Dockerfile is being built from a machine that has downloaded
-# Fuel data to a directory ../fuel/ . Otherwise, comment out these lines.
-#RUN mkdir -p "/home/$USERNAME/.gz/fuel"
-#COPY --chown=$USERNAME \
-#  ["fuel", \
-#  "/home/$USERNAME/.gz/fuel"]
-
 RUN mkdir -p /home/$USERNAME/ws_moveit2/src && cd /home/$USERNAME/ws_moveit2/src && git clone https://github.com/ros-planning/moveit2_tutorials -b humble --depth 1 && git clone https://github.com/ros-planning/moveit_task_constructor.git -b humble --depth 1
+
+# Copy Gazebo Fuel data from host if it exists
+# Assumes Dockerfile is being built from a machine that has downloaded
+# Fuel data to a directory ../fuel/ . Otherwise, no fuel data is included.
+RUN mkdir -p "/home/$USERNAME/.gz/fuel"
+# Note the weird spelling of "fuel" as the source; this is to only copy
+# if the "fuel" directory exists (via Docker glob support).  See
+# https://stackoverflow.com/questions/70096208/dockerfile-copy-folder-if-it-exists-conditional-copy/70096420#70096420
+COPY --chown=$USERNAME build.bash fue[l] /home/$USERNAME/.gz/fuel
+RUN rm -f build.bash
 
 # Start a webserver on localhost:9090 for the ROS 2 documentation, and drop to a bash shell
 CMD ["/bin/bash", "-c", "pushd /home/$USERNAME/docs.ros.org && python3 -m http.server 9090 >& /dev/null & /bin/bash"]

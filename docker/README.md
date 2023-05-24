@@ -220,14 +220,6 @@ container, to this directory (`./fuel`):
 docker cp trusting_albattani:/home/developer/.gz/fuel fuel
 ```
 
-Uncomment these lines in `icra2023_tutorial/Dockerfile`:
-```
-RUN mkdir -p "/home/$USERNAME/.gz/fuel"
-COPY --chown=$USERNAME \
-  ["fuel", \
-  "/home/$USERNAME/.gz/fuel"]
-```
-
 Then rebuild the image as above.
 Now the image will contain all the Fuel models of the Gazebo worlds you loaded.
 Next time you run the image, it will not need to download the Fuel data (unless
