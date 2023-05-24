@@ -31,6 +31,14 @@ then
     exit 1
 fi
 
+# If the user is not in the docker group, provide an informative error message
+if [[ $(grep /etc/group -e "docker") != *"${USER}"* ]]; then
+  >&2 echo -e "Error: The current user '${USER}' is not in the docker group. \
+Before trying again, please add your \$USER to the docker group with the \
+following command, and then log out and log back in for changes to take effect:\
+\n\n\tsudo usermod -a -G docker \$USER\n"
+fi
+
 # Get path to current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
