@@ -108,6 +108,18 @@ do
   fi
 done
 
+# Synchronize ROS 2 and Gazebo transport environment variables with the host
+# Default to isolated communication
+ROS_ENVS=(
+  "ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-"0"}"
+  "ROS_LOCALHOST_ONLY=${ROS_LOCALHOST_ONLY:-"1"}"
+)
+GZ_ENVS=(
+  "GZ_IP=${GZ_IP:-"127.0.0.1"}"
+  "GZ_RELAY=${GZ_RELAY:-"127.0.0.1"}"
+)
+DOCKER_OPTS="${DOCKER_OPTS} ${ROS_ENVS[*]/#/"-e "} ${GZ_ENVS[*]/#/"-e "}"
+
 # Mount extra volumes if needed.
 # E.g.:
 # -v "/opt/sublime_text:/opt/sublime_text" \
