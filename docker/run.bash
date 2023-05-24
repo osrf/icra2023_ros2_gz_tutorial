@@ -112,19 +112,12 @@ done
 # E.g.:
 # -v "/opt/sublime_text:/opt/sublime_text" \
 
-# If the user is not in the docker group, run the docker command with sudo
-if [[ $(grep /etc/group -e "docker") == *"${USER}"* ]]; then
-  DOCKER_CMD_PREFIX=""
-else
-  DOCKER_CMD_PREFIX="sudo"
-fi
-
 # Relax X server permissions so that local X connections work; this is necessary
 # when running under XWayland
 xhost + local:
 
 # --ipc=host and --network=host are needed for no-NVIDIA Dockerfile to work
-${DOCKER_CMD_PREFIX} docker run -it \
+docker run -it \
   -e DISPLAY \
   -e QT_X11_NO_MITSHM=1 \
   -e XAUTHORITY=$XAUTH \

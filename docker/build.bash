@@ -66,13 +66,6 @@ then
   exit 2
 fi
 
-# If the user is not in the docker group, run the docker command with sudo
-if [[ $(grep /etc/group -e "docker") == *"${USER}"* ]]; then
-  DOCKER_CMD_PREFIX=""
-else
-  DOCKER_CMD_PREFIX="sudo"
-fi
-
 user_id=$(id -u)
 image_name=$(basename $1)
 
@@ -80,13 +73,13 @@ image_name=$(basename $1)
 image_plus_tag=$image_name:latest
 
 echo "Building $image_name with base image $base"
-${DOCKER_CMD_PREFIX} docker build --rm -t $image_plus_tag --build-arg base=$base --build-arg user_id=$user_id $DIR/$image_name
+docker build --rm -t $image_plus_tag --build-arg base=$base --build-arg user_id=$user_id $DIR/$image_name
 echo "Built $image_plus_tag"
 
 # If building the tutorial image
 if [[ "$image_name" == icra2023_tutorial ]]; then
   # DockerHub repo name
   repo_plus_tag_suffix="osrf/icra2023_ros2_gz_tutorial:tutorial$tag_suffix"
-  ${DOCKER_CMD_PREFIX} docker tag $image_plus_tag $repo_plus_tag_suffix
+  docker tag $image_plus_tag $repo_plus_tag_suffix
   echo "Tagged as $repo_plus_tag_suffix"
 fi
