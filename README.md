@@ -26,6 +26,8 @@ Slides: TBP
 
 Breakout discussions: [community notes](https://drive.google.com/drive/folders/17guPLFHlZiY3TJ-tWCqIEWgCdLxUG7Lg?usp=share_link)
 
+Post-tutorial survey: [bit.ly/icra23_ros_survey](https://forms.gle/YU7oLKuWA7WTpZ887)
+
 ## Overview
 
 Software development, an end in itself in industry, is often a means to an end in academic robotics research, where the goal is to create a prototype, which happens to require software, to illustrate that a novel method works in most cases, downscoped by its assumptions.
