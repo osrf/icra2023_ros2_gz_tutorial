@@ -114,7 +114,7 @@ References
 1. Welcome and Intro (9:00 am, 5 mins)
 
 2. ROS 2 - What's New? (9:05 am, 50 mins)
-    1.  Cross-platform (Linux, Ubuntu, macOS)
+    1.  Cross-platform (Linux, Windows, macOS)
     2.  Rolling release
     3.  Pluggable comms/rmw layer at runtime (default middleware is DDS)
     4.  Client Libraries (rclcpp, rclpy)
@@ -124,7 +124,7 @@ References
     8.  Launch in Python, XML, YAML
     9.  Security (SROS2)
     10. DDS
-    11. Present and elaborate on points of whether people should switch to ROS 2. (Chris, 30 mins)
+    11. Present and elaborate on points of whether people should switch to ROS 2
         1. Community projects built on top of ROS 2
             1.  microROS for running on embedded systems
             2.  navigation2
