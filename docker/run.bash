@@ -32,7 +32,14 @@ then
 fi
 
 # Default to NVIDIA
-DOCKER_OPTS="--runtime=nvidia"
+# Note that on all non-Debian/non-Ubuntu platforms, dpkg won't exist so they'll always choose
+# --runtime=nvidia.  If you are running one of those platforms and --runtime=nvidia doesn't work
+# for you, change the else statement.
+if [[ -x "$(command -v dpkg)" ]] && dpkg --compare-versions "$(docker version --format '{{.Server.Version}}')" gt "19.3"; then
+  DOCKER_OPTS="--gpus=all"
+else
+  DOCKER_OPTS="--runtime=nvidia"
+fi
 
 # Parse and remove args
 PARAMS=""
