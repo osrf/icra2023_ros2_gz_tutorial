@@ -235,6 +235,6 @@ Chris Lalancette, Open Robotics team at Intrinsic
 
 The organizers thank the following facilitators (alphabetical by first name) from the community for helping to make the tutorial happen:
 - Andrej Orsula, University of Luxembourg
-- Rakesh Vivekanandan
+- Rakesh Vivekanandan, Oregon State University
 - Rhys Mainwaring
-- Timothy R. Player
+- Timothy R. Player, University of Washington Applied Physics Lab
