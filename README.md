@@ -113,50 +113,45 @@ References
 
 1. Welcome and Intro (9:00 am, 5 mins)
 
-2. Is ROS 2 right for me? (9:05 am, 50 mins)
-    1. Discuss top 5 reasons collected at ICRA 2022 Philadelphia through informal conversations, why people aren't using ROS 2. (Mabel, 5 mins)
-    2. Show the table in ROS 2 paper on Science Robotics highlighting ROS 1 vs. 2, 10 bite-size paragraphs of what's new in ROS 2, and 5 example use cases. (5 mins)
-    3. Present and elaborate on points of whether people should switch to ROS 2. (Chris, 30 mins)
-        1. ROS 2 in different domains
-            1. [Open Robotics Middleware Framework (Open-RMF)](https://www.open-rmf.org/) for indoor robot fleets ([GitHub](https://github.com/open-rmf))
-            1. MBZIRC for surface vessels ([GitHub](https://github.com/osrf/mbzirc))
-            1. VIPER for space (publicly [announced](https://www.nasa.gov/viper/lunar-operations), code not public)
-            1. SpaceROS
-            1. Examples from the community
-                1. Deep reinforcement learning manipulation ROS 2 + MoveIt2 + Gazebo + OpenAI Gym ([Andrej Orsula GitHub](https://github.com/AndrejOrsula/drl_grasping))
-        2. Pluggable comms/rmw layer at runtime (default middleware is DDS)
-        3. Cross-platform (Linux, Ubuntu, macOS)
-        4. Launch in Python, XML, YAML
-        5. Composable nodes
-        6. Lifecycle nodes for better determinism
-        7. Security (SROS2)
-        8. Rolling release
-        9. Projects built on top of ROS 2
-            1. microROS for running on embedded systems
-            2. navigation2
-            3. MoveIt 2
-    4. Simple DDS configurations
-        1. `RMW_IMPLEMENTATION`
-        1. Composition to avoid some performance problems
-        1. Inter-process communications can give very good performance
-        1. Per-DDS vendor config files
-    5. Resources - links to [tutorials](https://docs.ros.org/en/humble/Tutorials.html), API documentation, design documents, Discourse, list of Working Groups, simple ROS 2 DDS configurations, ROSCon (all past videos free online), Diversity Scholarships, etc. (5 mins)
-    5. Q&A (5 mins)
+2. ROS 2 - What's New? (9:05 am, 50 mins)
+    1.  Cross-platform (Linux, Ubuntu, macOS)
+    2.  Rolling release
+    3.  Pluggable comms/rmw layer at runtime (default middleware is DDS)
+    4.  Client Libraries (rclcpp, rclpy)
+    5.  Parameters
+    6.  Composable nodes
+    7.  Lifecycle nodes
+    8.  Launch in Python, XML, YAML
+    9.  Security (SROS2)
+    10. DDS
+    11. Present and elaborate on points of whether people should switch to ROS 2. (Chris, 30 mins)
+        1. Community projects built on top of ROS 2
+            1.  microROS for running on embedded systems
+            2.  navigation2
+            3.  MoveIt 2
+            4.  ros2_control
+        2.  Support cycle
+        3.  Package availability
+        4.  ROS 2 in different domains
+            1.  [Open Robotics Middleware Framework (Open-RMF)](https://www.open-rmf.org/) for indoor robot fleets ([GitHub](https://github.com/open-rmf))
+            2.  MBZIRC for surface vessels ([GitHub](https://github.com/osrf/mbzirc))
+            3.  VIPER for space (publicly [announced](https://www.nasa.gov/viper/lunar-operations), code not public)
+            4.  SpaceROS
+            5.  Deep reinforcement learning manipulation ROS 2 + MoveIt2 + Gazebo + OpenAI Gym ([Andrej Orsula GitHub](https://github.com/AndrejOrsula/drl_grasping))
+    13. Resources - links to [tutorials](https://docs.ros.org/en/humble/Tutorials.html), API documentation, design documents, Discourse, list of Working Groups, simple ROS 2 DDS configurations, ROSCon (all past videos free online), Diversity Scholarships, etc. (5 mins)
+    14. Q&A (5 mins)
 
 3. ROS 2 breakout discussions (10:00 am, 30 mins)
 
 4. Refreshment break (10:30 am, 10 mins)
 
 5. ROS 2 hands-on guided session with ROS 2 Dockerfile (10:40 am, 105 mins)
-    1. Show the existence of ROS 2 [tutorials](https://docs.ros.org/en/humble/Tutorials.html) (2 mins)
-    1. Demonstrate CLI tools briefly (10 mins interactive)
-    1. Brief walkthrough of code for simple publisher / subscriber example, demonstrate (15 mins interactive)
-        1. C++ talker + Python subscriber
-    1. Demonstrate what you can do with ROS 2 using an existing world from real applications in one of our public repositories above. Includes ROS 2, simulation in new Gazebo, RViz, robot controls.
-       1. [TB4](https://github.com/turtlebot/turtlebot4_simulator/tree/humble) (45 mins interactive)
-          1. Launch files (new XML, show Python exists, new YAML)
-          1. Services and actions, if TB4 has them
-          1. Parameters
+    1.  Getting started
+    2.  Quick demo of things that should work
+    3.  Beginner CLI Tools
+    4.  Beginner Client Libraries
+    5.  Intermediate Tutorials
+    6.  MoveIt 2 Tutorials
 
 6. Lunch (12:30-1:30 pm)
 
