@@ -253,3 +253,11 @@ Suggested discussion topics for Gazebo breakout:
 Mabel Zhang, Open Robotics team at Intrinsic
 
 Chris Lalancette, Open Robotics team at Intrinsic
+
+### Facilitators
+
+The organizers thank the following facilitators (alphabetical by first name) from the community for helping to make the tutorial happen:
+- Andrej Orsula, University of Luxembourg
+- Rakesh Vivekanandan, Oregon State University
+- Rhys Mainwaring
+- Timothy R. Player, University of Washington Applied Physics Lab
