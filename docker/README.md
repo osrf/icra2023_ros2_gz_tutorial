@@ -22,12 +22,15 @@ If you don't have an NVIDIA GPU, Gazebo GUI will use software rendering via
 Mesa llvmpipe (you can check that in `~/.gz/rendering/ogre2.log` after starting
 the Gazebo GUI).
 
-## Option 1: Pull from DockerHub
+## Option 1: Pull from DockerHub (recommended)
 
-This image (and possibly some extra data) is built and pushed to DockerHub under
+This is the easiest way to get set up and running.
+
+The image in this directory, along with 3D models used in the tutorial, is
+built and pushed to DockerHub under
 [osrf/icra2023_ros2_gz_tutorial](https://hub.docker.com/r/osrf/icra2023_ros2_gz_tutorial/tags).
 
-You can pull it from DockerHub and skip building it locally:
+You can pull it from DockerHub:
 ```
 docker pull osrf/icra2023_ros2_gz_tutorial:<tag>
 ```
@@ -37,6 +40,10 @@ have an NVIDIA GPU.
 ## Option 2: Build the image locally
 
 Skip this step if you already pulled the image from DockerHub.
+
+This builds the image from scratch. This gives you a working environment, but
+it does not contain some extra data that we included in the images on DockerHub
+intended to make parts of the tutorial possible without WiFi.
 
 If you have an NVIDIA graphics card, build using the NVIDIA Docker base image:
 ```
@@ -84,6 +91,8 @@ For convenience, if you built the image locally, this is an equivalent command
 that you can tab-complete:
 ```
 ./run.bash icra2023_tutorial
+# Or
+./run.bash icra2023_tutorial --no-nvidia
 ```
 
 You can see the list of all images with
@@ -190,6 +199,42 @@ For details, see Gazebo documentation on
 [Installing Gazebo with ROS](https://gazebosim.org/docs/garden/ros_installation).
 
 ## For maintainers
+
+### For maintainers building image for DockerHub
+
+To speed up load time of Gazebo worlds containing large 3D models from Fuel
+(e.g. on tutorial day), you can burn the Fuel data into the image ahead of time.
+
+Follow the section below to run the image, then launch Gazebo with your desired
+worlds (for splash screen worlds, simply run `gz sim` and select the worlds
+from the splash screen).
+
+The models may take a while to download from Fuel, while the Gazebo window
+remains black. Once the world is loaded, close Gazebo.
+
+Repeat for each world desired.
+
+Outside the container, on the host machine, copy the data out from the Docker
+container, to this directory (`./fuel`):
+```
+docker cp trusting_albattani:/home/developer/.gz/fuel fuel
+```
+
+Then rebuild the image as above.
+Now the image will contain all the Fuel models of the Gazebo worlds you loaded.
+Next time you run the image, it will not need to download the Fuel data (unless
+a new version of a model becomes available).
+
+### For maintainers only: Push to DockerHub
+
+Skip this section if you are not a maintainer of this repository.
+
+To push to DockerHub, make sure you have built both tags, then run
+```
+docker login
+docker push osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia
+docker push osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia
+```
 
 ### For maintainers only: Save Docker image to disk
 
