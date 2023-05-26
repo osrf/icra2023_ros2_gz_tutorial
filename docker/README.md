@@ -110,7 +110,12 @@ alias run_osrf_icra="/absolute/path/to/run.bash osrf/icra2023_ros2_gz_tutorial:t
 
 To join a running container from another terminal:
 ```
-./join.bash icra2023_tutorial
+./join.bash osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia
+```
+
+or:
+```
+./join.bash osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia
 ```
 
 ## Test the image
