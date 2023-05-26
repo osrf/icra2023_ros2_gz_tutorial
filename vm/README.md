@@ -1,5 +1,5 @@
 # Virtual Machine
-This tutorial explains how to install ROS2 and Gazebo in a virtual machine using
+This tutorial explains how to install ROS 2 and Gazebo in a virtual machine using
 VMWare Fusion 13. This is suitable for Mac computers (both Intel and M1). These
 instructions are tested on an M1 Macbook Pro 14 running macOS Ventura.
 
