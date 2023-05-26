@@ -53,7 +53,7 @@ at the conference venue.
   [here](https://dev.to/daud99/installing-ubuntu-using-vmware-fusion-tech-preview-on-mac-m1-silicon-4b0e)
   to install ubuntu-desktop in the Ubuntu server environment.
 - Complete the `RUN` commands from the [tutorial
-  Dockerfile](../docker/icra2023_tutorial/Dockerfile) to install ROS2 Humble,
+  Dockerfile](../docker/icra2023_tutorial/Dockerfile) to install ROS 2 Humble,
   Gazebo Garden, and many important libraries and documentation sources. Some
   modification may be necessary to suit an interactive workflow.
 </details>
