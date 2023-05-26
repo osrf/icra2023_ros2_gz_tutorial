@@ -46,7 +46,7 @@ at the conference venue.
   with a Personal Use License.
 - Double-click "VMware-Fusion-13.0.2-21581413_universal.dmg" and proceed with
   licensing and installation.
-2. Install Ubuntu, ROS2, and Gazebo in a VM.
+2. Install Ubuntu, ROS 2, and Gazebo in a VM.
 - Install Ubuntu ARM64 Server from an officially downloaded ISO.
 - Select 15GB for "/" drive.
 - Follow the instructions
