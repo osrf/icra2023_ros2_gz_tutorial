@@ -24,7 +24,7 @@ instructions are tested on an M1 Macbook Pro 14 running macOS Ventura.
 
 4. Log in using username `dev` and password `dev`.
 
-5. Enjoy the tutorial! This VM has ROS2 Humble, Gazebo Garden, ROS2
+5. Enjoy the tutorial! This VM has ROS 2 Humble, Gazebo Garden, ROS 2
    Documentation, and MoveIt 2 pre-installed.
 
 ## (Alternative) Install Yourself via Internet
