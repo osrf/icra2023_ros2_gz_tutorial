@@ -111,7 +111,7 @@ References
 
 [1] Steven Macenski, Tully Foote, Brian Gerkey, Chris Lalancette, and William Woodall. [Robot Operating System 2: Design, architecture, and uses in the wild](https://www.science.org/stoken/author-tokens/ST-483/full). Science Robotics, May 2022. Volume 7, issue 66. DOI 10.1126/scirobotics.abm6074
 
-### Schedule (tentative):
+### Schedule:
 
 1. Welcome and Intro (9:00 am, 5 mins, Mabel Zhang)
 
