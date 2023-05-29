@@ -123,10 +123,10 @@ that you can tab-complete:
 ./join.bash icra2023_tutorial --no-nvidia
 ```
 
-If none of the above works, you can also find the docker IMAGE ID of the image (`docker image ls`) and run the following:
+If none of the above works, you can also find the docker NAMES of the image (`docker ps`) and run the following:
 
 ```
-docker exec --privileged -e DISPLAY=${DISPLAY} -e LINES=`tput lines` -it <IMAGE ID> bash
+docker exec --privileged -e DISPLAY=${DISPLAY} -e LINES=`tput lines` -it <NAME> bash
 ```
 
 ## Test the image
