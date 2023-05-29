@@ -22,7 +22,7 @@ This GitHub repository: [bit.ly/icra23_ros_git](https://github.com/osrf/icra2023
 
 Docker Hub repository: [bit.ly/icra23_ros_docker](https://hub.docker.com/r/osrf/icra2023_ros2_gz_tutorial/tags)
 
-Slides: TBP
+[Slides](https://drive.google.com/drive/folders/1HeveECTM4RTbKhFgO0gieUqawBCQKZf0?usp=sharing)
 
 Breakout discussions: [community notes](https://drive.google.com/drive/folders/17guPLFHlZiY3TJ-tWCqIEWgCdLxUG7Lg?usp=share_link)
 
