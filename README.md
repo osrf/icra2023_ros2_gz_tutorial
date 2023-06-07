@@ -1,5 +1,9 @@
 # Tutorial: "All about ROS 2 and the new Gazebo"
 
+Thank you everyone for attending the in-person tutorial at ICRA 2023. We had a great turnout of 100+ attendees. All materials used for the tutorial are available in the links below.
+
+We had breakout group discussions of around 10 people each. All the groups took community notes linked below, which we hope can help you see what software others are using for their projects.
+
 **Please make sure to set up your laptop environment BEFORE the conference, if you plan on attending the hands-on session, as the conference WiFi will not support everyone downloading 2-4 GB on the day of the tutorial. See [Quick Start](#quick-start) below.**
 
 [Quick Links](#quick-links)
@@ -22,7 +26,7 @@ This GitHub repository: [bit.ly/icra23_ros_git](https://github.com/osrf/icra2023
 
 Docker Hub repository: [bit.ly/icra23_ros_docker](https://hub.docker.com/r/osrf/icra2023_ros2_gz_tutorial/tags)
 
-[Slides](https://drive.google.com/drive/folders/1HeveECTM4RTbKhFgO0gieUqawBCQKZf0?usp=sharing)
+Presentations and tutorial [slides](https://drive.google.com/drive/folders/1HeveECTM4RTbKhFgO0gieUqawBCQKZf0?usp=sharing)
 
 Breakout discussions: [community notes](https://drive.google.com/drive/folders/17guPLFHlZiY3TJ-tWCqIEWgCdLxUG7Lg?usp=share_link)
 
