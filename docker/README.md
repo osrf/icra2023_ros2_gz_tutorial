@@ -22,6 +22,14 @@ If you don't have an NVIDIA GPU, Gazebo GUI will use software rendering via
 Mesa llvmpipe (you can check that in `~/.gz/rendering/ogre2.log` after starting
 the Gazebo GUI).
 
+(As of Oct 2023, some months after the tutorial took place,
+[nvidia-docker](https://github.com/NVIDIA/nvidia-docker) is deprecated and
+superseded by
+[nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-container-toolkit).
+As the date is beyond when the tutorial took place, we will not provide new
+instructions. We advise users to follow official installation instructions from
+NVIDIA.)
+
 ## Option 1: Pull from DockerHub (recommended)
 
 This is the easiest way to get set up and running.
