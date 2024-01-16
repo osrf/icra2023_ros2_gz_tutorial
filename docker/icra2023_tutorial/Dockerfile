@@ -140,7 +140,7 @@ RUN colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mix
 
 # Build and install the ROS 2 documentation
 RUN cd /home/$USERNAME && git clone https://github.com/ros2/ros2_documentation && cd ros2_documentation \
- && pip3 install -r requirements.txt && PATH=$PATH:/home/$USERNAME/.local/bin make multiversion \
+ && pip3 install -r requirements.txt -c constraints.txt && PATH=$PATH:/home/$USERNAME/.local/bin make multiversion \
  && mkdir /home/$USERNAME/docs.ros.org \
  && cp -av /home/$USERNAME/ros2_documentation/build/html/* /home/$USERNAME/docs.ros.org \
  && rm -rf /home/$USERNAME/ros2_documentation
