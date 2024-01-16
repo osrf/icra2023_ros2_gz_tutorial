@@ -173,5 +173,11 @@ RUN mkdir -p "/home/$USERNAME/.gz/fuel"
 COPY --chown=$USERNAME build.bash fue[l] /home/$USERNAME/.gz/fuel
 RUN rm -f build.bash
 
+# Optional: Similarly, copy Turtlebot 4 Gazebo Fuel data from host (this is in
+# ~/.ignition as opposed to ~/.gz because Turtlebot 4 runs in Gazebo Fortress).
+RUN mkdir -p "/home/$USERNAME/.ignition/fuel"
+COPY --chown=$USERNAME build.bash fuel_fortres[s] /home/$USERNAME/.ignition/fuel
+RUN rm -f build.bash
+
 # Start a webserver on localhost:9090 for the ROS 2 documentation, and drop to a bash shell
 CMD ["/bin/bash", "-c", "pushd /home/$USERNAME/docs.ros.org && python3 -m http.server 9090 >& /dev/null & /bin/bash"]

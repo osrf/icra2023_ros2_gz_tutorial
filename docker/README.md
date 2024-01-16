@@ -238,8 +238,13 @@ remains black. Once the world is loaded, close Gazebo.
 
 Repeat for each world desired.
 
-Outside the container, on the host machine, copy the data out from the Docker
-container, to this directory (`./fuel`):
+Outside the container, on the host machine, find the name of your container:
+```
+docker container ls
+```
+Say we find our container name to be `trusting_albattani`.
+
+Copy the data out from the Docker container to this directory (`./fuel`):
 ```
 docker cp trusting_albattani:/home/developer/.gz/fuel fuel
 ```
