@@ -136,18 +136,34 @@ WORKDIR /home/$USERNAME
 RUN sudo rosdep init && rosdep update
 
 # Add colcon mixins
-RUN colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml && colcon mixin update default && rm -rf log
+RUN colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml \
+ && colcon mixin update default \
+ && rm -rf log
 
-# Build and install the ROS 2 documentation
+# Optional: Build and install the ROS 2 documentation
 RUN cd /home/$USERNAME && git clone https://github.com/ros2/ros2_documentation && cd ros2_documentation \
  && pip3 install -r requirements.txt -c constraints.txt && PATH=$PATH:/home/$USERNAME/.local/bin make multiversion \
  && mkdir /home/$USERNAME/docs.ros.org \
  && cp -av /home/$USERNAME/ros2_documentation/build/html/* /home/$USERNAME/docs.ros.org \
  && rm -rf /home/$USERNAME/ros2_documentation
 
-RUN mkdir -p /home/$USERNAME/ws_moveit2/src && cd /home/$USERNAME/ws_moveit2/src && git clone https://github.com/ros-planning/moveit2_tutorials -b humble --depth 1 && git clone https://github.com/ros-planning/moveit_task_constructor.git -b humble --depth 1
+RUN mkdir -p /home/$USERNAME/ws_moveit2/src \
+ && cd /home/$USERNAME/ws_moveit2/src \
+ && git clone https://github.com/ros-planning/moveit2_tutorials -b humble --depth 1 \
+ && git clone https://github.com/ros-planning/moveit_task_constructor.git -b humble --depth 1
 
-# Copy Gazebo Fuel data from host if it exists
+# Optional: Turtlebot 4
+# NOTE rosdep install here pulls in Gazebo Fortress, on top of Gazebo Garden
+# being installed in this Dockerfile.
+RUN mkdir -p /home/$USERNAME/turtlebot4_ws/src \
+ && cd /home/$USERNAME/turtlebot4_ws/src \
+ && git clone https://github.com/turtlebot/turtlebot4_simulator.git -b humble \
+ && cd /home/$USERNAME/turtlebot4_ws \
+ && rosdep install --from-path /home/$USERNAME/turtlebot4_ws/src --ignore-src --rosdistro humble -y \
+ && /bin/bash -c 'source /opt/ros/humble/setup.bash && colcon build --symlink-install'
+
+# Optional: Copy Gazebo Fuel data from host if it exists, to speed up world
+# loading time.
 # Assumes Dockerfile is being built from a machine that has downloaded
 # Fuel data to a directory ../fuel/ . Otherwise, no fuel data is included.
 RUN mkdir -p "/home/$USERNAME/.gz/fuel"
@@ -155,6 +171,12 @@ RUN mkdir -p "/home/$USERNAME/.gz/fuel"
 # if the "fuel" directory exists (via Docker glob support).  See
 # https://stackoverflow.com/questions/70096208/dockerfile-copy-folder-if-it-exists-conditional-copy/70096420#70096420
 COPY --chown=$USERNAME build.bash fue[l] /home/$USERNAME/.gz/fuel
+RUN rm -f build.bash
+
+# Optional: Similarly, copy Turtlebot 4 Gazebo Fuel data from host (this is in
+# ~/.ignition as opposed to ~/.gz because Turtlebot 4 runs in Gazebo Fortress).
+RUN mkdir -p "/home/$USERNAME/.ignition/fuel"
+COPY --chown=$USERNAME build.bash fuel_fortres[s] /home/$USERNAME/.ignition/fuel
 RUN rm -f build.bash
 
 # Start a webserver on localhost:9090 for the ROS 2 documentation, and drop to a bash shell
