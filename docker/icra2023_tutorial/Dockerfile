@@ -141,12 +141,11 @@ RUN colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mix
  && rm -rf log
 
 # Optional: Build and install the ROS 2 documentation
-# FIXME new Sphinx version error. Temporarily comment out
-#RUN cd /home/$USERNAME && git clone https://github.com/ros2/ros2_documentation && cd ros2_documentation \
-# && pip3 install -r requirements.txt && PATH=$PATH:/home/$USERNAME/.local/bin make multiversion \
-# && mkdir /home/$USERNAME/docs.ros.org \
-# && cp -av /home/$USERNAME/ros2_documentation/build/html/* /home/$USERNAME/docs.ros.org \
-# && rm -rf /home/$USERNAME/ros2_documentation
+RUN cd /home/$USERNAME && git clone https://github.com/ros2/ros2_documentation && cd ros2_documentation \
+ && pip3 install -r requirements.txt -c constraints.txt && PATH=$PATH:/home/$USERNAME/.local/bin make multiversion \
+ && mkdir /home/$USERNAME/docs.ros.org \
+ && cp -av /home/$USERNAME/ros2_documentation/build/html/* /home/$USERNAME/docs.ros.org \
+ && rm -rf /home/$USERNAME/ros2_documentation
 
 RUN mkdir -p /home/$USERNAME/ws_moveit2/src \
  && cd /home/$USERNAME/ws_moveit2/src \
@@ -175,5 +174,4 @@ COPY --chown=$USERNAME build.bash fue[l] /home/$USERNAME/.gz/fuel
 RUN rm -f build.bash
 
 # Start a webserver on localhost:9090 for the ROS 2 documentation, and drop to a bash shell
-# FIXME uncomment when ros2_documentation build above is fixed
-#CMD ["/bin/bash", "-c", "pushd /home/$USERNAME/docs.ros.org && python3 -m http.server 9090 >& /dev/null & /bin/bash"]
+CMD ["/bin/bash", "-c", "pushd /home/$USERNAME/docs.ros.org && python3 -m http.server 9090 >& /dev/null & /bin/bash"]
