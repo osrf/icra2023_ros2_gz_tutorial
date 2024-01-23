@@ -26,7 +26,7 @@ This GitHub repository: [bit.ly/icra23_ros_git](https://github.com/osrf/icra2023
 
 Docker Hub repository: [bit.ly/icra23_ros_docker](https://hub.docker.com/r/osrf/icra2023_ros2_gz_tutorial/tags)
 
-Presentations and tutorial [slides](https://drive.google.com/drive/folders/1HeveECTM4RTbKhFgO0gieUqawBCQKZf0?usp=sharing)
+Presentations and tutorial slides: [bit.ly/icra23_ros_slides](https://drive.google.com/drive/folders/10oGspKiLUR3ft-f-4iHQU1SHTH6pUx9M?usp=sharing)
 
 Breakout discussions: [community notes](https://drive.google.com/drive/folders/17guPLFHlZiY3TJ-tWCqIEWgCdLxUG7Lg?usp=share_link)
 
