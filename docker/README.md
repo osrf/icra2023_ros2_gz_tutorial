@@ -5,6 +5,9 @@ should work as well.
 
 ## Prerequisites
 
+These instructions do not work on M1 Macs. If you have an M1 Mac, consider using
+the [VM instructions](../vm/README.md) or working with someone who does not.
+
 Before starting, please ensure that Docker is installed and configured on your
 system by following the instructions
 [here](https://github.com/osrf/subt/wiki/Docker%20Install).
