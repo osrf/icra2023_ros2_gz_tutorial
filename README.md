@@ -1,8 +1,6 @@
 # Tutorial: "All about ROS 2 and the new Gazebo"
 
-Thank you everyone for attending the in-person tutorial at ICRA 2023. We had a great turnout of 100+ attendees. All materials used for the tutorial are available in the links below.
-
-We had breakout group discussions of around 10 people each. All the groups took community notes linked below, which we hope can help you see what software others are using for their projects.
+Thank you everyone for attending the in-person tutorial at ROSCon 2024.
 
 **Please make sure to set up your laptop environment BEFORE the conference, if you plan on attending the hands-on session, as the conference WiFi will not support everyone downloading 2-4 GB on the day of the tutorial. See [Quick Start](#quick-start) below.**
 
@@ -22,15 +20,11 @@ We had breakout group discussions of around 10 people each. All the groups took 
 
 ## Quick Links
 
-This GitHub repository: [bit.ly/icra23_ros_git](https://github.com/osrf/icra2023_ros2_gz_tutorial)
+This GitHub repository: https://github.com/osrf/icra2023_ros2_gz_tutorial/tree/roscon2024
 
-Docker Hub repository: [bit.ly/icra23_ros_docker](https://hub.docker.com/r/osrf/icra2023_ros2_gz_tutorial/tags)
+Docker Hub repository: https://hub.docker.com/r/osrf/roscon2024_ros2_gz_tutorial/tags
 
-Presentations and tutorial slides: [bit.ly/icra23_ros_slides](https://drive.google.com/drive/folders/10oGspKiLUR3ft-f-4iHQU1SHTH6pUx9M?usp=sharing)
-
-Breakout discussions: [community notes](https://drive.google.com/drive/folders/17guPLFHlZiY3TJ-tWCqIEWgCdLxUG7Lg?usp=share_link)
-
-Post-tutorial survey: [bit.ly/icra23_ros_survey](https://forms.gle/YU7oLKuWA7WTpZ887)
+Presentations and tutorial slides: https://drive.google.com/drive/folders/10oGspKiLUR3ft-f-4iHQU1SHTH6pUx9M?usp=sharing
 
 ## Overview
 
@@ -57,12 +51,12 @@ Audience:
 
 Clone this repository:
 ```
-git clone https://github.com/osrf/icra2023_ros2_gz_tutorial.git
+git clone https://github.com/osrf/icra2023_ros2_gz_tutorial.git -b roscon2024
 ```
 
-We will be using Ubuntu Jammy (22.04), ROS 2 Humble, and Gazebo Garden.
+We will be using Ubuntu Jammy (24.04), ROS 2 Jazzy, and Gazebo Harmonic.
 
-Follow the installation instructions in [`docker/README.md`](https://github.com/osrf/icra2023_ros2_gz_tutorial/blob/main/docker/README.md) to get set up and running.
+Follow the installation instructions in [`docker/README.md`](https://github.com/osrf/icra2023_ros2_gz_tutorial/blob/roscon2024/docker/README.md) to get set up and running.
 
 ## Contributing
 
@@ -138,13 +132,7 @@ References
             4.  ros2_control
         2.  Support cycle
         3.  Package availability
-        4.  ROS 2 in different domains
-            1.  [Open Robotics Middleware Framework (Open-RMF)](https://www.open-rmf.org/) for indoor robot fleets ([GitHub](https://github.com/open-rmf))
-            2.  MBZIRC for surface vessels ([GitHub](https://github.com/osrf/mbzirc))
-            3.  VIPER for space (publicly [announced](https://www.nasa.gov/viper/lunar-operations), code not public)
-            4.  SpaceROS
-            5.  Deep reinforcement learning manipulation ROS 2 + MoveIt2 + Gazebo + OpenAI Gym ([Andrej Orsula GitHub](https://github.com/AndrejOrsula/drl_grasping))
-    13. Resources - links to [tutorials](https://docs.ros.org/en/humble/Tutorials.html), API documentation, design documents, Discourse, list of Working Groups, simple ROS 2 DDS configurations, ROSCon (all past videos free online), Diversity Scholarships, etc.
+    13. Resources - links to [tutorials](https://docs.ros.org/en/jazzy/Tutorials.html), API documentation, design documents, Discourse, list of Working Groups, simple ROS 2 DDS configurations, ROSCon (all past videos free online), Diversity Scholarships, etc.
     14. Q&A (5 mins)
 
 3. ROS 2 [breakout](#breakouts) discussions (10:00 am, 30 mins)
@@ -236,35 +224,8 @@ References
         8. [ROSCon](https://roscon.ros.org/) annual developers conference, and [Diversity Scholarships](https://discourse.ros.org/search?q=roscon%20diversity%20scholarship) to attend ROSCon
     2. Open-floor Q&A and discussions
 
-## Breakouts
-
-Please take notes [here](https://drive.google.com/drive/folders/17guPLFHlZiY3TJ-tWCqIEWgCdLxUG7Lg?usp=share_link).
-
-### ROS 2
-
-Suggested discussion topics for ROS 2 breakout:
-
-1. What ROS version are you using, ROS 1 or 2? If you are not using ROS, what middleware are you using?
-1. What is your application domain?
-1. What problems have you encountered with ROS 1, if any? To your knowledge, does ROS 2 solve any of them?
-1. If you are using ROS 1, what stops you from migrating to ROS 2?
-1. If you have used both ROS 1 and ROS 2, what do you like and dislike about each? Are there problems in one version that are solved in the other?
-1. What problems have you encountered with ROS 2?
-
-### Gazebo
-
-Suggested discussion topics for Gazebo breakout:
-
-1. What simulator do you currently use? Why did you choose it? Which other simulators have you evaluated before choosing it, if any?
-1. If you are using a simulator, what are you using it for? Are you using it for development? For testing? For continuous integration?
-1. Have you ever used Gazebo-classic? Have you heard of the new Gazebo (formerly Ignition)? What do you know about the new Gazebo?
-1. What are the most important problems that your current simulator DOES address for your use case?
-1. What are the most important problems that simulators do not address for your use case? This can be a limit of the state of the art, or of the particular simulators you have tried. For example, contact physics, deformable objects, approximate hydrodynamics, rendering of specific environments, etc.
-
 ## Organizers
-Mabel Zhang, Open Robotics team at Intrinsic
-
-Chris Lalancette, Open Robotics team at Intrinsic
+Chris Lalancette, ROS 2 Project Lead
 
 ### Facilitators
 

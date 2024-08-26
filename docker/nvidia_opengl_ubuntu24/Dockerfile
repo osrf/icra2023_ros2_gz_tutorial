@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2023 Open Source Robotics Foundation
+# Copyright (C) 2024 Open Source Robotics Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,11 +13,11 @@
 # limitations under the License.
 #
 
-# Since nvidia/opengl:*-glvnd-devel-ubuntu22.04 is not available yet, this
-# builds an equivalent, to run X server in an Ubuntu 20.04 Docker image.
+# Since nvidia/opengl:*-glvnd-devel-ubuntu24.04 is not available yet, this
+# builds an equivalent, to run X server in an Ubuntu 24.04 Docker image.
 # https://hub.docker.com/r/nvidia/opengl
 
-FROM ubuntu:jammy
+FROM ubuntu:noble
 
 #####
 # Following lines are copied from
@@ -44,7 +43,7 @@ RUN echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf && \
     echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf
 
 # https://gitlab.com/nvidia/container-images/opengl/-/blob/ubuntu20.04/NGC-DL-CONTAINER-LICENSE
-COPY nvidia_opengl_ubuntu22/NGC-DL-CONTAINER-LICENSE /
+COPY nvidia_opengl_ubuntu24/NGC-DL-CONTAINER-LICENSE /
 
 # Required for non-glvnd setups.
 ENV LD_LIBRARY_PATH /usr/lib/x86_64-linux-gnu:/usr/lib/i386-linux-gnu${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}:/usr/local/nvidia/lib:/usr/local/nvidia/lib64

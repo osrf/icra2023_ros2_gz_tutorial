@@ -20,9 +20,9 @@
 # Builds a Docker image.
 # Example usage:
 # If you have an NVIDIA graphics card
-#   $ ./build.bash icra2023_tutorial
+#   $ ./build.bash roscon2024_tutorial
 # Otherwise
-#   $ ./build.bash icra2023_tutorial --no-nvidia
+#   $ ./build.bash roscon2024_tutorial --no-nvidia
 
 # No arg
 if [ $# -eq 0 ]
@@ -34,8 +34,8 @@ fi
 # Get path to current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Default base image, defined in nvidia_opengl_ubuntu22/Dockerfile
-base="nvidia_opengl_ubuntu22:latest"
+# Default base image, defined in nvidia_opengl_ubuntu24/Dockerfile
+base="nvidia_opengl_ubuntu24:latest"
 tag_suffix="_nvidia"
 
 # Parse and remove args
@@ -43,7 +43,7 @@ PARAMS=""
 while (( "$#" )); do
   case "$1" in
     --no-nvidia)
-      base="ubuntu:jammy"
+      base="ubuntu:noble"
       tag_suffix="_no_nvidia"
       shift
       ;;
@@ -77,9 +77,9 @@ docker build --rm -t $image_plus_tag --build-arg base=$base --build-arg user_id=
 echo "Built $image_plus_tag"
 
 # If building the tutorial image
-if [[ "$image_name" == icra2023_tutorial ]]; then
+if [[ "$image_name" == roscon2024_tutorial ]]; then
   # DockerHub repo name
-  repo_plus_tag_suffix="osrf/icra2023_ros2_gz_tutorial:tutorial$tag_suffix"
+  repo_plus_tag_suffix="osrf/icra2023_ros2_gz_tutorial:roscon2024_tutorial$tag_suffix"
   docker tag $image_plus_tag $repo_plus_tag_suffix
   echo "Tagged as $repo_plus_tag_suffix"
 fi

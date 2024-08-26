@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2023 Open Source Robotics Foundation
+# Copyright (C) 2024 Open Source Robotics Foundation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,15 +13,15 @@
 # limitations under the License.
 #
 
-# ROS 2 Humble binary install
-# http://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
+# ROS 2 Jazzy binary install
+# http://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
 
 # Gazebo Garden binary install
-# https://gazebosim.org/docs/garden/install_ubuntu
+# https://gazebosim.org/docs/harmonic/install_ubuntu
 
 # Ubuntu with nvidia-docker2 beta opengl support
 # https://hub.docker.com/r/nvidia/opengl
-# doesn't exist for Ubuntu 22.04 yet at time of writing.
+# doesn't exist for Ubuntu 24.04 yet at time of writing.
 #FROM nvidia/opengl:1.0-glvnd-devel-ubuntu22.04
 # Use homebrewed version until above exists officially
 # Image is in ../nvidia_opengl_ubuntu22/Dockerfile
@@ -89,40 +88,42 @@ RUN /bin/sh -c 'wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share
     python3-vcstool \
     python3-colcon-common-extensions \
     python3-colcon-mixin \
-    ros-humble-control-msgs \
-    ros-humble-controller-manager \
-    ros-humble-desktop \
-    ros-humble-generate-parameter-library \
-    ros-humble-geometric-shapes \
-    ros-humble-gripper-controllers \
-    ros-humble-joint-state-broadcaster \
-    ros-humble-joint-state-publisher \
-    ros-humble-joint-trajectory-controller \
-    ros-humble-moveit-common \
-    ros-humble-moveit-configs-utils \
-    ros-humble-moveit-core \
-    ros-humble-moveit-hybrid-planning \
-    ros-humble-moveit-msgs \
-    ros-humble-moveit-resources-panda-moveit-config \
-    ros-humble-moveit-ros-move-group \
-    ros-humble-moveit-ros-perception \
-    ros-humble-moveit-ros-planning \
-    ros-humble-moveit-ros-planning-interface \
-    ros-humble-moveit-ros-visualization \
-    ros-humble-moveit-servo \
-    ros-humble-moveit-visual-tools \
-    ros-humble-moveit \
-    ros-humble-rmw-cyclonedds-cpp \
-    ros-humble-ros2-control \
-    ros-humble-rviz-visual-tools \
-    ros-humble-xacro \
-    gz-garden \
+    ros-jazzy-control-msgs \
+    ros-jazzy-controller-manager \
+    ros-jazzy-desktop \
+    ros-jazzy-generate-parameter-library \
+    ros-jazzy-geometric-shapes \
+    ros-jazzy-gripper-controllers \
+    ros-jazzy-gz-sim-vendor \
+    ros-jazzy-joint-state-broadcaster \
+    ros-jazzy-joint-state-publisher \
+    ros-jazzy-joint-trajectory-controller \
+    ros-jazzy-moveit-common \
+    ros-jazzy-moveit-configs-utils \
+    ros-jazzy-moveit-core \
+    ros-jazzy-moveit-hybrid-planning \
+    ros-jazzy-moveit-msgs \
+    ros-jazzy-moveit-resources-panda-moveit-config \
+    ros-jazzy-moveit-ros-move-group \
+    ros-jazzy-moveit-ros-perception \
+    ros-jazzy-moveit-ros-planning \
+    ros-jazzy-moveit-ros-planning-interface \
+    ros-jazzy-moveit-ros-visualization \
+    ros-jazzy-moveit-servo \
+    ros-jazzy-moveit-visual-tools \
+    ros-jazzy-moveit \
+    ros-jazzy-rmw-cyclonedds-cpp \
+    ros-jazzy-ros2-control \
+    ros-jazzy-rviz-visual-tools \
+    ros-jazzy-xacro \
  && apt-get clean
 
 # Add a user with the same user_id as the user outside the container
 # Requires a docker build argument `user_id`
 ARG user_id
 ENV USERNAME developer
+# Delete user if it exists in container
+RUN if id -u ${user_id} ; then userdel $( id -un ${user_id} ) ; fi
 RUN useradd -U --uid ${user_id} -ms /bin/bash $USERNAME \
  && echo "$USERNAME:$USERNAME" | chpasswd \
  && adduser $USERNAME sudo \
@@ -142,25 +143,10 @@ RUN colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mix
 
 # Optional: Build and install the ROS 2 documentation
 RUN cd /home/$USERNAME && git clone https://github.com/ros2/ros2_documentation && cd ros2_documentation \
- && pip3 install -r requirements.txt -c constraints.txt && PATH=$PATH:/home/$USERNAME/.local/bin make multiversion \
+ && pip3 install -r requirements.txt -c constraints.txt --break-system-packages --no-warn-script-location && PATH=$PATH:/home/$USERNAME/.local/bin make multiversion \
  && mkdir /home/$USERNAME/docs.ros.org \
  && cp -av /home/$USERNAME/ros2_documentation/build/html/* /home/$USERNAME/docs.ros.org \
  && rm -rf /home/$USERNAME/ros2_documentation
-
-RUN mkdir -p /home/$USERNAME/ws_moveit2/src \
- && cd /home/$USERNAME/ws_moveit2/src \
- && git clone https://github.com/ros-planning/moveit2_tutorials -b humble --depth 1 \
- && git clone https://github.com/ros-planning/moveit_task_constructor.git -b humble --depth 1
-
-# Optional: Turtlebot 4
-# NOTE rosdep install here pulls in Gazebo Fortress, on top of Gazebo Garden
-# being installed in this Dockerfile.
-RUN mkdir -p /home/$USERNAME/turtlebot4_ws/src \
- && cd /home/$USERNAME/turtlebot4_ws/src \
- && git clone https://github.com/turtlebot/turtlebot4_simulator.git -b humble \
- && cd /home/$USERNAME/turtlebot4_ws \
- && rosdep install --from-path /home/$USERNAME/turtlebot4_ws/src --ignore-src --rosdistro humble -y \
- && /bin/bash -c 'source /opt/ros/humble/setup.bash && colcon build --symlink-install'
 
 # Optional: Copy Gazebo Fuel data from host if it exists, to speed up world
 # loading time.
@@ -171,12 +157,6 @@ RUN mkdir -p "/home/$USERNAME/.gz/fuel"
 # if the "fuel" directory exists (via Docker glob support).  See
 # https://stackoverflow.com/questions/70096208/dockerfile-copy-folder-if-it-exists-conditional-copy/70096420#70096420
 COPY --chown=$USERNAME build.bash fue[l] /home/$USERNAME/.gz/fuel
-RUN rm -f build.bash
-
-# Optional: Similarly, copy Turtlebot 4 Gazebo Fuel data from host (this is in
-# ~/.ignition as opposed to ~/.gz because Turtlebot 4 runs in Gazebo Fortress).
-RUN mkdir -p "/home/$USERNAME/.ignition/fuel"
-COPY --chown=$USERNAME build.bash fuel_fortres[s] /home/$USERNAME/.ignition/fuel
 RUN rm -f build.bash
 
 # Start a webserver on localhost:9090 for the ROS 2 documentation, and drop to a bash shell

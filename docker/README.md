@@ -1,6 +1,6 @@
 # Docker environments to run the tutorials in this repository
 
-These instructions were tested on Ubuntu Jammy (22.04). Other recent versions
+These instructions were tested on Ubuntu Noble (24.04). Other recent versions
 should work as well.
 
 ## Prerequisites
@@ -36,11 +36,11 @@ This is the easiest way to get set up and running.
 
 The image in this directory, along with 3D models used in the tutorial, is
 built and pushed to DockerHub under
-[osrf/icra2023_ros2_gz_tutorial](https://hub.docker.com/r/osrf/icra2023_ros2_gz_tutorial/tags).
+[osrf/roscon2024_ros2_gz_tutorial](https://hub.docker.com/r/osrf/roscon2024_ros2_gz_tutorial/tags).
 
 You can pull it from DockerHub:
 ```
-docker pull osrf/icra2023_ros2_gz_tutorial:<tag>
+docker pull osrf/roscon2024_ros2_gz_tutorial:<tag>
 ```
 Replace `<tag>` with `tutorial_nvidia` or `tutorial_no_nvidia`, depending on whether you
 have an NVIDIA GPU.
@@ -55,13 +55,13 @@ intended to make parts of the tutorial possible without WiFi.
 
 If you have an NVIDIA graphics card, build using the NVIDIA Docker base image:
 ```
-./build.bash nvidia_opengl_ubuntu22
-./build.bash icra2023_tutorial
+./build.bash nvidia_opengl_ubuntu24
+./build.bash roscon2024_tutorial
 ```
 
 Otherwise, build without NVIDIA Docker:
 ```
-./build.bash icra2023_tutorial --no-nvidia
+./build.bash roscon2024_tutorial --no-nvidia
 ```
 
 A few tags will be created for the same image, for convenience of running
@@ -89,18 +89,18 @@ To spin up a container from an image, this should work whether you pulled from
 DockerHub or built locally:
 ```
 # If you have NVIDIA GPU
-./run.bash osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia
+./run.bash osrf/roscon2024_ros2_gz_tutorial:tutorial_nvidia
 
 # Without NVIDIA GPU
-./run.bash osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia --no-nvidia
+./run.bash osrf/roscon2024_ros2_gz_tutorial:tutorial_no_nvidia --no-nvidia
 ```
 
 For convenience, if you built the image locally, this is an equivalent command
 that you can tab-complete:
 ```
-./run.bash icra2023_tutorial
+./run.bash roscon2024_tutorial
 # Or
-./run.bash icra2023_tutorial --no-nvidia
+./run.bash roscon2024_tutorial --no-nvidia
 ```
 
 You can see the list of all images with
@@ -111,24 +111,24 @@ docker images
 You can set up an alias so that you don't have to type the command every time.
 For example, replace the path and image name to yours:
 ```
-alias run_osrf_icra="/absolute/path/to/run.bash osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia"
+alias run_osrf_roscon="/absolute/path/to/run.bash osrf/roscon2024_ros2_gz_tutorial:tutorial_nvidia"
 ```
 
 ## Open another terminal in the running container
 
 To join a running container from another terminal:
 ```
-./join.bash osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia
+./join.bash osrf/roscon2024_ros2_gz_tutorial:tutorial_nvidia
 # Or
-./join.bash osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia
+./join.bash osrf/roscon2024_ros2_gz_tutorial:tutorial_no_nvidia
 ```
 
 For convenience, if you built the image locally, this is an equivalent command
 that you can tab-complete:
 ```
-./join.bash icra2023_tutorial
+./join.bash roscon2024_tutorial
 # Or
-./join.bash icra2023_tutorial --no-nvidia
+./join.bash roscon2024_tutorial --no-nvidia
 ```
 
 If none of the above works, you can also find the docker NAMES of the image (`docker ps`) and run the following:
@@ -144,7 +144,7 @@ container.
 
 ROS 2:
 ```
-$ . /opt/ros/humble/setup.bash
+$ . /opt/ros/jazzy/setup.bash
 $ ros2 topic list
 /parameter_events
 /rosout
@@ -200,28 +200,6 @@ If GUI programs don't work, you can also try the following on the host machine:
 xhost + local:
 ```
 
-### ROS 2 Humble and Gazebo Garden interoperability
-
-For the purpose of the ICRA tutorial, we set up ROS 2 and Gazebo separately,
-since they are run as two separate tutorials.
-This allows us to show you the latest versions of each at the time of writing
-(ROS 2 Humble and Gazebo Garden).
-We do not intend to use both at the same time for the tutorial.
-
-It is possible to use Humble and Garden together, and we have real-world
-projects that do, though that is not a recommended combination.
-
-You will need to build the interface stack
-[`ros_gz`](https://github.com/gazebosim/ros_gz) from source.
-
-Then, make sure to export this environment variable:
-```
-export GZ_VERSION=garden
-```
-
-For details, see Gazebo documentation on
-[Installing Gazebo with ROS](https://gazebosim.org/docs/garden/ros_installation).
-
 ## For maintainers
 
 ### For maintainers building image for DockerHub
@@ -261,8 +239,8 @@ Skip this section if you are not a maintainer of this repository.
 To push to DockerHub, make sure you have built both tags, then run
 ```
 docker login
-docker push osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia
-docker push osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia
+docker push osrf/roscon2024_ros2_gz_tutorial:tutorial_nvidia
+docker push osrf/roscon2024_ros2_gz_tutorial:tutorial_no_nvidia
 ```
 
 ### For maintainers only: Save Docker image to disk
@@ -274,8 +252,8 @@ Dell XPS 15 9570 from 2018).
 
 You can use gzip (file size much smaller than tar):
 ```
-docker save osrf/icra2023_ros2_gz_tutorial:tutorial_nvidia | gzip > tutorial_nvidia.tar.gz
-docker save osrf/icra2023_ros2_gz_tutorial:tutorial_no_nvidia | gzip > tutorial_no_nvidia.tar.gz
+docker save osrf/roscon2024_ros2_gz_tutorial:tutorial_nvidia | gzip > tutorial_nvidia.tar.gz
+docker save osrf/roscon2024_ros2_gz_tutorial:tutorial_no_nvidia | gzip > tutorial_no_nvidia.tar.gz
 ```
 
 To load the file back into Docker as an image, use `docker load` as described
